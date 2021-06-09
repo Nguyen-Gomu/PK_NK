@@ -1,0 +1,242 @@
+header{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width:100%;
+    min-height: 70px;
+    z-index: 100;
+    margin-bottom:30px;
+    background-color: #fff;
+    width: 100%;
+}
+
+header .nav-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:15px 15px 0px 15px;
+    
+    height:45px;
+}   
+
+.nav-icons .logo a{
+    text-decoration: none;  
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: black;
+    margin-left: 90px;
+}
+    
+.nav-right{
+    position: relative;
+}
+
+.nav-right a{
+    font-size:16px;
+    padding:0 10px;
+    color: #000;
+}
+
+.nav-right a:nth-child(1) {
+    padding-left: 0;
+}
+
+.nav-right span{
+    position: absolute;
+    right: 70px;
+    top: 6px;
+    font-size: 13px;
+}
+
+.nav-icons .menu{
+    font-size:16px;
+    cursor: pointer;
+}
+
+
+.nav-menu{
+    position: static;
+    padding:10px;
+}
+
+.nav-menu ul {
+    /* position:relative; */
+    display: flex;
+    justify-content:center;
+    padding:0;
+    width: 100%; 
+    height:auto;
+    margin: 0;
+}
+
+.nav-menu ul li{
+    list-style: none;
+    display:inline-block;
+}
+
+.nav-menu ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: #000;
+    font-weight: bold;
+    padding:20px;
+    font-size: 12px;
+}
+
+.nav-menu ul li a:hover{
+    color:red;
+}
+
+.menu__sub ul li a:hover{
+    color: red;
+}
+
+
+
+.nav-menu .close{
+    display:none;
+}
+
+
+.menu__sub{
+    position:absolute;
+    top:100px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+    display:none;
+}
+ 
+.menu__sub ul{
+    margin: 20px 2% 20px;
+    width: 50%;
+    display: inline-block;
+
+}
+
+.menu__sub ul li{
+    display: inline-block;
+    white-space: nowrap;
+    text-transform: uppercase;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0;
+    width: 32%;
+}
+
+.menu__sub ul li a{
+    padding: 0;
+    text-transform: capitalize;
+    color: #000;
+    letter-spacing:0.5px;
+}
+
+
+.nav-menu li:hover a ~ .menu__sub{
+    display:block;
+}
+
+
+
+@media screen and (max-width:768px){
+    .nav-menu ul{
+        position: fixed;
+        top:0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        background: white;
+        z-index: 99;
+        opacity: 0.97;
+        transition: 0.5s linear;
+    }
+    .nav-menu ul .close{
+        display: inline-block;
+        position:absolute;
+        top:0;
+        padding:20px;
+        font-size:16px;
+        cursor: pointer;
+        color: #000;
+
+    }
+    header .close{
+        position: absolute;
+        top:10px;
+        right: 20px;
+    }
+    header ul.toggle{
+        left: 0;
+    }
+
+    .nav-right a:nth-child(3) {
+        display:none;
+    }
+    .nav-right span{
+        position: absolute;
+        right: 36px;
+        top: 6px;
+        font-size: 13px;
+    }
+    
+} 
+
+
+
+ul li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+/*header nav{
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+}
+nav ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #555;
+    padding: 0 15px;
+}
+nav ul li a:hover{
+    color: lightseagreen;
+}
+nav .nav-cart{
+    cursor: pointer;
+    position: relative;
+}
+nav .nav-cart span{
+    position: absolute;
+    top:-12px;
+    right: -7px;
+    background: crimson;
+    font-size: 20px;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 50%;
+    z-index: -1;
+}
+header .menu,
+header .close{
+    cursor: pointer;
+    display: none;
+}*/
