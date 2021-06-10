@@ -5,6 +5,7 @@ import Header from './components/Header'
 
 import MainPage from './screen/MainPage'
 import './App.css';
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Switch>
             <Route path="/" component={MainPage} />
           </Switch>
+          <Footer/>
         </Router>
   );
 }

@@ -19,7 +19,6 @@
     position:absolute;
     bottom:10%;
     left:5%;
-    width: 100%;
     height:auto;
 }
 
@@ -35,6 +34,7 @@
 .home__description {
     font-size: 1.5rem;
     color: #fff;
+    padding-bottom: 10px;
 }
 
 .home__img {

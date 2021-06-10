@@ -6,7 +6,6 @@ header{
     width:100%;
     min-height: 70px;
     z-index: 100;
-    margin-bottom:30px;
     background-color: #fff;
     width: 100%;
 }
@@ -102,7 +101,7 @@ header .nav-icons{
 
 .menu__sub{
     position:absolute;
-    top:100px;
+    top:85px;
     left: 0;
     width: 100%;
     height: auto;
