@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Components
 import Product from "../../components/Product/Product";
+import MainPage from '../MainPage'
 
 //Actions
 import { getProducts as listProducts } from "../../redux/action/productAction";
@@ -27,9 +28,10 @@ const HomeScreen = () => {
         ) : error ? (
           <h2>{error}</h2>
         ) : (
-          <h2>ra roi vui qua</h2>
+          products.map((product) => (
+            <MainPage/>
+          ))
         )}
-        <Product/>
       </div>
     </div>
   );
