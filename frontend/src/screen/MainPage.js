@@ -13,6 +13,7 @@ import clothers from '../assets/images/nike-clothers.jpg'
 
 import man from '../assets/images/man.jpg'
 import woman from '../assets/images/woman.jpg'
+import Products from '../components/Product/Product';
 
 // //////
 
@@ -55,9 +56,6 @@ export class MainPage extends Component{
                 {/* End Hero */}
                 
                 {/* List Product */}
-                <div className="product">
-                    <h1>List Product Here</h1>
-                </div>
                 {/* End List Product */}
 
                 {/* Kind Products */}
@@ -89,10 +87,6 @@ export class MainPage extends Component{
                 {/* End Kind */}
 
 
-                <div className="product">
-                    <h1>List Product Here</h1>
-                </div>
-
                 {/* Men-Woman */}
                 <div className="who">
                     <h1>WHO ARE YOU SHOPPING FOR?</h1>
@@ -111,7 +105,8 @@ export class MainPage extends Component{
                         </div>
                     </div>
                 </div>
-                
+
+
             </section>
         )
     }
