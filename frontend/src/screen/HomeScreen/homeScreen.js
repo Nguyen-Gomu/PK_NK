@@ -29,7 +29,7 @@ const HomeScreen = () => {
           <h2>{error}</h2>
         ) : (
           products.map((product) => (
-            <MainPage/>
+            <Product />
           ))
         )}
       </div>
