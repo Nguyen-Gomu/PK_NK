@@ -1,12 +1,11 @@
+import './App.css';
 import React,{useState} from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Header from './components/Header'
+import Header from './components/Header/Header'
 
 import MainPage from './screen/MainPage'
-import './App.css';
-import Footer from "./components/Footer";
-import HomeScreen from "./screen/HomeScreen/homeScreen";
+
 
 import SignIn from './screen/User/Signin/Signin'
 import Checkout from './screen/Checkout/Checkout'
@@ -15,10 +14,11 @@ import CartScreen from './screen/CartScreen/CartScreen'
 
 
 // component
-
-import Navbar from './components/Navbar/Navbar'
+import HomeScreen from "./screen/HomeScreen/homeScreen";
 import Backdrop from './components/Backdrop/Backdrop'
 import SideDrawer from './components/SiderDrawer/SiderDrawer'
+import Footer from "./components/Footer";
+
 
 function App() {
 
@@ -28,8 +28,7 @@ function App() {
   return (
         <main>
           <Router>
-            {/* <Header/> */}
-            <Navbar click={() => setSideToggle(true)}/>
+            <Header click={() => setSideToggle(true)}/>
             <SideDrawer show={sideToggle} click={() => setSideToggle(false)}/>
             <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>
             <Switch>

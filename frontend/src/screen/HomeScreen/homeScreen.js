@@ -1,27 +1,40 @@
-import React from 'react'
-import './homeScreen.css'
+import "./homeScreen.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import Product from '../../components/Product/Product'
+// Components
+import Product from "../../components/Product/Product";
 
-const homeScreen = () => {
+//Actions
+import { getProducts as listProducts } from "../../redux/action/productAction";
+
+const HomeScreen = () => {
+  const dispatch = useDispatch();
+
+  const getProducts = useSelector((state) => state.getProducts);
+  const { products, loading, error } = getProducts;
+
+  useEffect(() => {
+    dispatch(listProducts());
+  }, [dispatch]);
+
   return (
-    <div className="homeScreen">
+    <div className="homescreen">
       <h2 className="homescreen__title">Latest Products</h2>
-
       <div className="homeScreen__products">
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
-        <Product/>
+        {/* {loading ? (
+          <h2>Loading...</h2>
+        ) : error ? (
+          <h2>{error}</h2>
+        ) : (
+          products.map((product) => (
+            <Product/>
+          ))
+        )} */}
+        <Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default homeScreen
+export default HomeScreen;

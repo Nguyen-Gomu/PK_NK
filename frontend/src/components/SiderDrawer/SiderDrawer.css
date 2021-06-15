@@ -1,7 +1,7 @@
 .sidedrawer {
-    width: 70%;
+    width: 75%;
     background: #fff;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -16,59 +16,52 @@
   .sidedrawer.show {
     transform: translateX(0);
   }
-  
-  .sidedrawer__links {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-  }
-  
-  .sidedrawer__links > li {
-    display: flex;
-    align-items: center;
-  }
-  
-  .sidedrawer__links > li > a:hover {
-    background: #333;
-    color: #f4f4f4;
-  }
-  
-  .sidedrawer__links > li > a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex: 1;
-    padding: 1rem;
-    text-decoration: none;
-    color: #171717;
-    font-size: 1.6rem;
-  }
-  
-  .sidedrawer__links > li > a > span {
-    display: flex;
-    align-items: center;
-    margin-left: 8px;
+
+  .menu{
+    position: relative;
+    overflow: auto;
+    height: 100%;
+    font-family: 'Cabin', sans-serif;
   }
 
+  .nav-right{
+    position: relative;
+  }
 
-.sidedrawer__cartbadge{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .menu__logo h1{
     text-align: center;
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    background:#171717;
-    color: #f4f4f4;
-    font-size: 1rem;
-    margin-left: 8px;    
+    padding:25px 0;
+  }
+
+  .menu__logo h1 a{
+    color: #262626;
+  }
+
+  .menu__contact{
+    display: flex;
+    justify-content:space-between;
+    padding: 13px 20px 13px 30px;
+    text-transform: uppercase;
+    position: relative;
+    border-bottom: 1px solid #f0f0f0;
+    color: #262626;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .menu ul li a{
+    display: block;
+    padding: 13px 20px 13px 30px;
+    text-transform: uppercase;
+    position: relative;
+    border-bottom: 1.5px solid #f0f0f0;
+    color: #262626;
+    font-size: 12px;
+    font-weight: bold;
 }
 
-
-@media screen and (max-width:960px){
-    .sidedrawer{
-        display:none;
-    }
+.menu ul li ul {
+  padding-left: 15px;
+  margin-bottom: 40px;
 }
+

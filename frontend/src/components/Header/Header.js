@@ -3,32 +3,17 @@ import React, { Component } from 'react'
 // import Close from './svg/times-solid.svg'
 // import CartIcon from './svg/shopping-cart-solid.svg'
 import {Link} from 'react-router-dom'
-import '../css/Header.css'
+import './Header.css'
 
 
-// import {Datacontext} from "./Context"
 
 
-export class Header extends Component {
-    // static contextType = Datacontext;
-
-    state = {
-        toggle: false
-    }
-
-    menuToggle = () =>{
-        this.setState({toggle: !this.state.toggle})
-    }
-
-
-    render() {
-        const {toggle} = this.state;
-        // const {bag} = this.context;
+    const Header = ({click}) => {
         return (
             <header>
                 <div className="header__container">
                     <div className="nav-icons">
-                        <div className="menu" onClick={this.menuToggle}>
+                        <div className="menu" onClick={click}>
                             <i class="fas fa-bars"></i>
                         </div>
                         <div className="logo">
@@ -43,15 +28,15 @@ export class Header extends Component {
                                 <Link to="/signin">
                                     <i class="fas fa-user"></i>
                                 </Link>
-                                <Link to="/" onClick={this.menuToggle}>
+                                <Link to="/" onClick={click}>
                                     <i class="fas fa-search"></i>
                                 </Link>
                             </div>
                         </nav>
                     </div>
                     <nav className="nav-menu">
-                        <ul className={toggle ? "toggle" : ""}>
-                            <li className="close" onClick={this.menuToggle}>
+                        <ul>
+                            <li className="close" onClick={click}>
                                 <i class="fas fa-times"></i>
                             </li>
                             <li><Link to="/">FEATURES</Link></li>
@@ -106,7 +91,6 @@ export class Header extends Component {
                 </div>
             </header>
         )
-    }
 }
 
 
