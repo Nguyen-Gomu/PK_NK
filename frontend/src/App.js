@@ -17,7 +17,10 @@ import CartScreen from './screen/CartScreen/CartScreen'
 import HomeScreen from "./screen/HomeScreen/homeScreen";
 import Backdrop from './components/Backdrop/Backdrop'
 import SideDrawer from './components/SiderDrawer/SiderDrawer'
+import SearchDrawer from './components/SearchDrawer/SearchDrawer'
 import Footer from "./components/Footer";
+import Section from './components/Section';
+
 
 
 function App() {
@@ -31,15 +34,14 @@ function App() {
             <Header click={() => setSideToggle(true)}/>
             <SideDrawer show={sideToggle} click={() => setSideToggle(false)}/>
             <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>
+            {/* <SearchDrawer show={sideToggle} click={() => setSideToggle(false)}/> */}
             <Switch>
-              {/* <Route path="/home" component={HomeScreen} />
               <Route path="/" component={MainPage} exact/>
-              <Route path="/signin" component={SignIn}/> 
-              <Route path="/checkout" component={Checkout}/> */}
-
-              <Route exact path="/" component={HomeScreen}/>
+              <Route path="/home" component={HomeScreen} />
               <Route exact path="/product" component={ProductScreen}/>
               <Route exact path="/cart" component={CartScreen}/>
+              
+              
             </Switch>
             {/* <Footer/> */}
           </Router>
