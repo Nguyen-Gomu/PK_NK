@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Product from "../../components/Product/Product";
 
 //Actions
-import { getProducts as listProducts } from "../../redux/action/productAction";
+import { getProducts as listProducts } from "../../redux/actions/productActions";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -21,17 +21,16 @@ const HomeScreen = () => {
   return (
     <div className="homescreen">
       <h2 className="homescreen__title">Latest Products</h2>
-      <div className="homeScreen__products">
-        {/* {loading ? (
+      <div className="homescreen__products">
+        {loading ? (
           <h2>Loading...</h2>
         ) : error ? (
           <h2>{error}</h2>
         ) : (
           products.map((product) => (
-            <Product/>
+            <Product />
           ))
-        )} */}
-        <Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/><Product/>
+        )}
       </div>
     </div>
   );
