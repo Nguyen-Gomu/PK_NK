@@ -1,4 +1,3 @@
-
 import * as actionTypes from "../constants/cartConstants";
 
 const CART_INITIAL_STATE = {
@@ -34,4 +33,3 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
       return state;
   }
 };
->>>>>>> 1a69b46ad240663edb9b1a60556afcde68731497

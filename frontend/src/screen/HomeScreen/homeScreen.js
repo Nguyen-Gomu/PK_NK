@@ -31,6 +31,7 @@ const HomeScreen = () => {
             <Product />
           ))
         )}
+
       </div>
     </div>
   );
