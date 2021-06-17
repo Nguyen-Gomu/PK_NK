@@ -31,7 +31,7 @@ const HomeScreen = () => {
               key={product._id}
               name={product.name}
               brand={product.brand}
-              skind={product.skind}
+              kind={product.kind}
               price={product.price}
               src={product.src}
               productId={product._id}

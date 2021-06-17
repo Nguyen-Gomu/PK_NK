@@ -33,13 +33,14 @@ function App() {
             <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>
             <Switch>
               {/* <Route path="/home" component={HomeScreen} />
-              <Route path="/" component={MainPage} exact/>
+              
               <Route path="/signin" component={SignIn}/> 
               <Route path="/checkout" component={Checkout}/> */}
 
-              <Route exact path="/" component={HomeScreen}/>
+              <Route exact path="/home" component={HomeScreen}/>
               <Route exact path="/product" component={ProductScreen}/>
               <Route exact path="/cart" component={CartScreen}/>
+              <Route path="/" component={MainPage} exact/>
             </Switch>
             {/* <Footer/> */}
           </Router>
