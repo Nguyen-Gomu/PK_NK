@@ -21,7 +21,47 @@ const getProductById = async (req, res) => {
   }
 };
 
+const getProductByName = async (req, res) => {
+    const productName = new RegExp(req.params.name, 'i');
+    Product.find({name:productName})
+    .then((result) => {
+      res.status(200).json({
+        message: "Find successfully",
+        result
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+          error: err
+      });
+    })
+};
+
+const FillterProduct = async (req, res) => {
+  const match = {}
+
+    if(req.query.kind){
+        match.kind = req.query.kind === 'shoe'
+    }
+    try {
+        await req.Product.populate({
+            path:'posts',
+            match,
+            options:{
+                limit: parseInt(req.query.limit),
+                skip: parseInt(req.query.skip)
+            }
+        }).execPopulate()
+        res.send(req.Product.FillterProduct)
+    } catch (error) {
+        res.status(500).send()
+    }
+};
+
 module.exports = {
   getProducts,
   getProductById,
+  getProductByName,
+  FillterProduct,
 };
