@@ -2,6 +2,7 @@
     max-width: 1300px;
     margin: 1rem auto;
     display: flex;
+    margin-top: 150px;
   }
   
   .productscreen__left {
@@ -69,6 +70,10 @@
     border: 1px solid #171717;
     cursor: pointer;
     border-radius: 5px;
+  }
+
+  .right__info p > button:hover{
+    background-color: #d1d1d1;
   }
   
   .right__info select {

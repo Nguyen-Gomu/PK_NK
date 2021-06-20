@@ -3,7 +3,7 @@ import './CartItem.css'
 
 import {Link} from 'react-router-dom'
 
-const CartItem = () => {
+const CartItem = ({item}) => {
     return (
         <div className="cartitem">
             <div className="cartitem__image">

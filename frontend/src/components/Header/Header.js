@@ -22,7 +22,7 @@ import './Header.css'
                         <nav>
                             <div className="nav-right">
                                 {/* <span>{bag.length}</span> */}
-                                <Link to="/bag">
+                                <Link to="/cart">
                                     <i class="fas fa-shopping-cart"></i>
                                 </Link>
                                 <Link to="/signin">
