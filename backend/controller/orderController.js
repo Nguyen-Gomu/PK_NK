@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 
 //functions used for routing (similar to MVC properties - Models, View, Controllers)
-exports.orders_get_all = (req, res, next) => {
+const orders_get_all = (req, res, next) => {
     Order.find().select('product quantity _id').populate('product', 'name').exec()
     .then(docs => {
         res.status(200).json({
@@ -30,7 +30,7 @@ exports.orders_get_all = (req, res, next) => {
     });
 }
 
-exports.orders_create_order = (req, res, next) => {
+const orders_create_order = (req, res, next) => {
     Product.findById(req.body.productId)
     .then(product =>{
         if (!product) {
@@ -68,7 +68,7 @@ exports.orders_create_order = (req, res, next) => {
     });
 }
 
-exports.orders_get_order = (req, res, next) => {
+const orders_get_order = (req, res, next) => {
     Order.findById(req.params.orderId)
     //notice the removal of 'name' which allows extra info to be viewed individually
     .populate('product').exec()
@@ -94,7 +94,7 @@ exports.orders_get_order = (req, res, next) => {
     });
 }
 
-exports.orders_delete_order = (req, res, next) => {
+const orders_delete_order = (req, res, next) => {
     Order.findOneAndRemove({_id: req.params.orderId}).exec()
     .then(result => {
         res.status(200).json({
@@ -111,4 +111,11 @@ exports.orders_delete_order = (req, res, next) => {
         error: err
         });
     });
+}
+
+module.exports = {
+    orders_get_all,
+    orders_get_order,
+    orders_create_order,
+    orders_delete_order
 }
