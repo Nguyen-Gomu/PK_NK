@@ -3,6 +3,7 @@
   width: 100%;
   cursor: pointer;
   margin:30px 0;
+  color: #000;
 }
 
 .product > img {
@@ -57,7 +58,9 @@ padding-top: 10px;
   padding-top: 10px;
 }
 
-.info__skind:hover,
+.info__kind:hover{
+  color: red;
+}
 .info__brand:hover{
   color: red;
 }

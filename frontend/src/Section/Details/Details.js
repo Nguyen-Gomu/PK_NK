@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Datacontext} from "../Context"
 import '../css/Details.css'
-import Sizes from './SizeDetails'
+import Sizes from '../SizeDetails'
 
 export class Details extends Component {
     static contextType = Datacontext;
@@ -12,8 +12,6 @@ export class Details extends Component {
         ],
         index:0
     }
-
-
 
 
     myRef = React.createRef();
