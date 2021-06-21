@@ -39,13 +39,13 @@ const ProductScreen = ({match,history}) => {
                     <div className="left__info">
                         <p className="left__name">{product.name}</p>
                         <p>{Intl.NumberFormat('en-US').format(product.price)}₫</p>
-                        <p> Description: pla pla pla and pla pla pla</p>
+                        <p>{product.content}</p>
                     </div>  
                 </div>
                 <div className="productscreen__right">
                     <div className="right__info">
                         <p>{Intl.NumberFormat('en-US').format(product.price)}₫</p>
-                        <p>
+                        <p>         
                             Status:<span>
                                 {product.count >0 ? "On stock": "Out of Stock"}
                             </span>
@@ -63,6 +63,7 @@ const ProductScreen = ({match,history}) => {
                         <p>
                             <button onClick={addToCartHandler}>Add to cart</button>
                         </p>
+
                     </div>
                 </div>
             </>}

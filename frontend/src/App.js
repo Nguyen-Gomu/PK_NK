@@ -32,15 +32,16 @@ function App() {
             <SideDrawer show={sideToggle} click={() => setSideToggle(false)}/>
             <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>
             <Switch>
-              {/* <Route path="/home" component={HomeScreen} />
+              {/* <Route path="/home" component={HomeScreen} /> */}
               
               <Route path="/signin" component={SignIn}/> 
-              <Route path="/checkout" component={Checkout}/> */}
+              <Route path="/checkout" component={Checkout}/>
 
               <Route exact path="/home" component={HomeScreen}/>
               <Route exact path="/product/:id" component={ProductScreen}/>
               <Route exact path="/cart" component={CartScreen}/>
               <Route path="/" component={MainPage} exact/>
+
             </Switch>
             {/* <Footer/> */}
           </Router>

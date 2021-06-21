@@ -3,7 +3,7 @@ import imgTest from "../../assets/images/nike0.jpg"
 import { Link } from "react-router-dom";
 
 
-const Product = ({ src, kind, price, name, productId ,count,brand}) => {
+const Product = ({ src, kind, price, name, productId ,brand}) => {
   return (
     <Link className="product" to={`/product/${productId}`}>
       <img src={src[0]} alt={name}/>
