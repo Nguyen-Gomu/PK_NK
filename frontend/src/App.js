@@ -37,10 +37,10 @@ function App() {
               <Route path="/signin" component={SignIn}/> 
               <Route path="/checkout" component={Checkout}/>
 
-              <Route exact path="/home" component={HomeScreen}/>
+              <Route exact path="/" component={HomeScreen}/>
               <Route exact path="/product/:id" component={ProductScreen}/>
               <Route exact path="/cart" component={CartScreen}/>
-              <Route path="/" component={MainPage} exact/>
+              <Route path="/home" component={MainPage} exact/>
 
             </Switch>
             {/* <Footer/> */}
