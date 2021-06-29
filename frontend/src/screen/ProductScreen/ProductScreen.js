@@ -19,7 +19,7 @@ const ProductScreen = ({ match, history }) => {
   useEffect(() => {
     if (product && match.params.id !== product._id) {
       dispatch(getProductDetails(match.params.id));
-    }
+    } 
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
