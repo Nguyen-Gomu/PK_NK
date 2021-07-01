@@ -7,24 +7,37 @@ const CartItem = ({item,removeHandler}) => {
     return (
         <div className="cartitem">
             <div className="cartitem__image">
-                <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5a636763-c983-4173-8228-dcae17a32466/mercurial-vapor-14-elite-fg-football-boot-mBw0QS.png" alt="/"></img>
+                <img src={item.src} alt={item.name}></img>
             </div>
+            <div className="cartitem__info">
+              <div className="cartitem__info--top">
+                <Link to={`/product/${item.product}`} className="cartitem__name">
+                    <p>{item.name}</p>
+                </Link>
 
-            <Link to={`/product/${111}`} className="cartitem__name">
-                <p>Product 1</p>
-            </Link>
+                <p className="cartitem__price">{Intl.NumberFormat('en-US').format(item.price)}₫</p>
+              </div>
+              <p>{item.content}</p>
+              <div className="qty">
+                <p>Quantity:</p>
+                <select className="cartitem__select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+              </div>
 
-            <p className="cartitem__price">$499.99</p>
+              <div className="size">
+                <p>Size:</p>
+                <p>....</p>
+              </div>
 
-            <select className="cartitem__select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-            <button className="cartitem__deleteBtn" onClick={() => removeHandler(item.product)}>
-                <i className="fas fa-trash"></i>
-            </button>
+              <p className="cartitem__deleteBtn" onClick={() => removeHandler(item.product)}>
+                  remove
+              </p>
+            </div>
+            
         </div>
     )
 }
