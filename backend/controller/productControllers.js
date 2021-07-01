@@ -22,13 +22,16 @@ const getProductById = async (req, res) => {
 };
 
 const deleteProduct = async (req, res) => {
-  const id = req.params.productId;
-  //updated function from .remove()
-    Product.findOneAndRemove({ _id: id }).exec()
+    Product.findByIdAndRemove(req.params.id)
     .then(result => {
-        res.status(200).json({
-            message: "Product removed successfully"
+      if(!result){
+        return res.status(404).json({
+          message: "Product not found with id " + req.params.id
         });
+      }
+      res.status(200).json({
+          message: "Product removed successfully"
+      });
     })
     .catch(err => {
         console.log(err);
