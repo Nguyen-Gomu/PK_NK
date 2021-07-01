@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProductDetails } from "../../redux/actions/productActions";
 import { addToCart } from "../../redux/actions/cartActions";
 
-import amen from '../../assets/images/pexels-peter-fazekas-1089455.jpg'
 
 
 const ProductScreen = ({ match, history }) => {
@@ -41,7 +40,7 @@ const ProductScreen = ({ match, history }) => {
             </div>
             <div className="left__info">
               <p className="left__name">{product.name}</p>
-              <p>{product.price}</p>
+              <p>Price:{product.price}</p>
               <p>{product.content}</p>
             </div>
           </div>
