@@ -21,6 +21,23 @@ const getProductById = async (req, res) => {
   }
 };
 
+const deleteProduct = async (req, res) => {
+  const id = req.params.productId;
+  //updated function from .remove()
+    Product.findOneAndRemove({ _id: id }).exec()
+    .then(result => {
+        res.status(200).json({
+            message: "Product removed successfully"
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+            error: err
+        });
+    });
+}
+
 const getProductByName = async (req, res) => {
     const productName = new RegExp(req.params.name, 'i');
     Product.find({name:productName})
@@ -62,6 +79,7 @@ const FillterProduct = async (req, res) => {
 module.exports = {
   getProducts,
   getProductById,
+  deleteProduct,
   getProductByName,
   FillterProduct,
 };
