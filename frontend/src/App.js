@@ -17,7 +17,6 @@ import CartScreen from './screen/CartScreen/CartScreen'
 import HomeScreen from "./screen/HomeScreen/homeScreen";
 import Backdrop from './components/Backdrop/Backdrop'
 import SideDrawer from './components/SiderDrawer/SiderDrawer'
-import Footer from "./components/Footer";
 
 
 function App() {
@@ -43,7 +42,6 @@ function App() {
               <Route path="/home" component={MainPage} exact/>
 
             </Switch>
-            {/* <Footer/> */}
           </Router>
         </main>
   );

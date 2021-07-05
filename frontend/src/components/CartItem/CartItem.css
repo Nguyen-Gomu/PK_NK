@@ -14,7 +14,7 @@
 }
 
 .cartitem__info {
-  max-width: 450px;
+  max-width: 600px;
   width: 100%;
 }
 
@@ -39,7 +39,16 @@
 }
 
 .qty .cartItem__select {
-  padding: 30px;
+  padding: 10px;
+}
+
+.cartitem__deleteBtn {
+  cursor: pointer;
+  width: 15%;
+}
+
+.cartitem__deleteBtn:hover {
+  color: red;
 }
 
 .cartitem__info .qty,

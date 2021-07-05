@@ -4,11 +4,20 @@ import React, { Component } from 'react'
 // import CartIcon from './svg/shopping-cart-solid.svg'
 import {Link} from 'react-router-dom'
 import './Header.css'
+import { useSelector } from "react-redux";
 
-
+    
 
 
     const Header = ({click}) => {
+
+        const cart = useSelector((state) => state.cart);
+            const { cartItems } = cart;
+
+            const getCartCount = () => {
+                return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+            };
+
         return (
             <header>
                 <div className="header__container">
@@ -22,8 +31,9 @@ import './Header.css'
                         <nav>
                             <div className="nav-right">
                                 {/* <span>{bag.length}</span> */}
-                                <Link to="/cart">
+                                <Link to="/cart" className="cart__header">
                                     <i class="fas fa-shopping-cart"></i>
+                                    <p className="qty__header">({getCartCount()})</p>
                                 </Link>
                                 <Link to="/signin">
                                     <i class="fas fa-user"></i>

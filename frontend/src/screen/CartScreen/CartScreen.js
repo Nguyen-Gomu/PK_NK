@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
 
 import './CartScreen.css'
 import {Link} from 'react-router-dom'
@@ -10,15 +10,37 @@ import CartItem from '../../components/CartItem/CartItem'
 // Action
 import { addToCart, removeFromCart } from '../../redux/actions/cartActions'
 
-const CartScreen = ({ item, qtyChangeHandler, removeHandler }) => {
+const CartScreen = () => {
     const dispatch = useDispatch();
 
     const cart = useSelector(state => state.cart);
     const {cartItems} = cart;
 
+    useEffect(() => {},[]);
+
+    const qtyChangeHandler = (id, qty) => {
+        dispatch(addToCart(id, qty));
+      };
+
     const removeFromCartHandler = (id) => {
         dispatch(removeFromCart(id));
-      };
+    };
+
+    const getCartCount = () => {
+        return cartItems.reduce((qty,item) => Number(item.qty) + qty, 0);
+    };
+
+    const getCartTotal = () => {
+        return cartItems
+            .reduce((price,item) => price + item.price * item.qty + 30000, 0)
+            .toFixed(2);
+    }
+
+    const getCartSubTotal = () => {
+        return cartItems
+            .reduce((price,item) => price + item.price * item.qty , 0)
+            .toFixed(2);
+    }
 
     return (
         <div className="cartscreen">
@@ -30,11 +52,12 @@ const CartScreen = ({ item, qtyChangeHandler, removeHandler }) => {
                     </div>
                 ) : (
                     cartItems.map((item) => (
-                    <CartItem
-                        key={item.product}
-                        item={item}
-                        removeHandler={removeFromCartHandler}
-                    />
+                        <CartItem
+                            key={item.product}
+                            item={item}
+                            removeHandler={removeFromCartHandler}
+                            qtyChangeHandler={qtyChangeHandler}
+                        />
                     ))
                 )}
             </div>
@@ -43,15 +66,19 @@ const CartScreen = ({ item, qtyChangeHandler, removeHandler }) => {
                 < div className="summary__Box">
                     <div className="summary__Box--subtotal">
                     <span>Subtotal</span>
-                    <p>$20</p>
+                    <p>{Intl.NumberFormat('en-US').format(getCartSubTotal())}₫</p>
                 </div>                  
                 <div className="summary__Box--ship">
                     <span>Estimated Delivery & Handling</span>
                     <p>30,000₫</p>
                 </div>
+                <div className="summary__Box--item">
+                    <span>Item</span>
+                    <p>{getCartCount()}</p>
+                </div>
                 <div className="summary__Box--total">
                     <span>Total</span>
-                    <p>$15</p>
+                    <p>{Intl.NumberFormat('en-US').format(getCartTotal())}₫</p>
                 </div>
                 <Link to="/product" className="cart" >
                     Guest Checkout

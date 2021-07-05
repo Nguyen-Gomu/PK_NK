@@ -1,6 +1,6 @@
 .cartscreen {
   display: flex;
-  margin: 150px;
+  margin: 100px;
   justify-content: space-between;
 }
 
@@ -57,7 +57,7 @@
   width: 100%;
   padding: 1rem;
   position: fixed;
-  top: 20%;
+  top: 24%;
   right: 5%;
 }
 
@@ -94,6 +94,12 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #000;
+}
+
+.summary__Box--item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .summary__Box .cart {
   background: #111;
@@ -138,5 +144,17 @@
 @media (max-width: 550px) {
   .cartscreen {
     margin-top: 100px;
+    margin: 10px;
+
+    max-width: 550px;
+    width: 100%;
+  }
+
+  .cartscreen .summary {
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+    padding: 1rem;
+    margin: 22px;
   }
 }
