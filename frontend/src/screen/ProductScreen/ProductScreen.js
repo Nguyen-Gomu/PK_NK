@@ -41,6 +41,7 @@ const ProductScreen = ({ match, history }) => {
             </div>
             <div>
               <img src={product.imgDetail[2]}></img>
+              {/* viết code chỗ này cũng dùm map() */}
             </div>
           </div>
           <div className="productscreen__right">
@@ -54,7 +55,8 @@ const ProductScreen = ({ match, history }) => {
             <div className="right__info">
               <div className="size">
               <p>
-                size    
+                size:
+                    {/* nó giống giống như thằng Qty */}
               </p>
               </div>
               <p>
