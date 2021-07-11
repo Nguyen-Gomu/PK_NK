@@ -9,15 +9,11 @@ const productSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    src: {
+    gender: {
         type: String,
         require: true
     },
-    imgDetail: {
-        type: Array,
-        require: true
-    },
-    description: {
+    brand: {
         type: String,
         require: true
     },
@@ -33,7 +29,11 @@ const productSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    size: {
+    src: {
+        type: String,
+        require: true
+    },
+    imgDetail: {
         type: Array,
         require: true
     },
@@ -41,9 +41,13 @@ const productSchema = new mongoose.Schema({
         type: Number,
         require: true
     },
-    quantities: {
-        type: Number,
-        require: true,
+    size: {
+        type: Array,
+        require: true
+    },
+    type: {
+        type: String,
+        require: true
     }
 })
 

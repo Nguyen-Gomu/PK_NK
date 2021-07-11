@@ -3,7 +3,6 @@ const Product = require('../models/Product');
 const mongoose = require('mongoose');
 
 
-//functions used for routing (similar to MVC properties - Models, View, Controllers)
 const orders_get_all = (req, res, next) => {
     Order.find().select('product quantity _id').populate('product', 'name').exec()
     .then(docs => {
@@ -16,7 +15,7 @@ const orders_get_all = (req, res, next) => {
                     quantity: doc.quantity,
                     request: {
                         type: 'GET',
-                        url: 'http://localhost:3000/orders/' + doc._id
+                        url: 'http://localhost:5000/api/orders/' + doc._id
                     }
                 }
             })
@@ -49,14 +48,14 @@ const orders_create_order = (req, res, next) => {
         console.log(result);
         res.status(201).json({
             message: 'Order stored',
-            createdOrder: {
+            order: {
                 _id: result._id,
                 product: result.product,
                 quantity: result.quantity
             },
             request: {
                 type: 'GET',
-                url: 'http://localhost:3000/orders/' + result._id
+                url: 'http://localhost:5000/api/orders/' + result._id
             }
         });
     })
@@ -70,9 +69,7 @@ const orders_create_order = (req, res, next) => {
 
 const orders_get_order = (req, res, next) => {
     Order.findById(req.params.orderId)
-    //notice the removal of 'name' which allows extra info to be viewed individually
     .populate('product').exec()
-    //notification when order is not found
     .then(order => {
         if (!order) {
             return res.status(404).json({
@@ -83,7 +80,7 @@ const orders_get_order = (req, res, next) => {
               order: order,
               request: {
                   type: 'GET',
-                  url: 'http://localhost:3000/orders'
+                  url: 'http://localhost:5000/api/orders'
               }
         })
     })
@@ -101,7 +98,7 @@ const orders_delete_order = (req, res, next) => {
               message: "Order removed",
               request: {
                   type: 'POST',
-                  url: 'http://localhost:3000/orders',
+                  url: 'http://localhost:5000/api/orders',
                   body: {productId: 'ID', quantity: 'Number'}
               }
         })

@@ -58,31 +58,9 @@ const getProductByName = async (req, res) => {
     })
 };
 
-const FillterProduct = async (req, res) => {
-  const match = {}
-
-    if(req.query.kind){
-        match.kind = req.query.kind === 'shoe'
-    }
-    try {
-        await req.Product.populate({
-            path:'posts',
-            match,
-            options:{
-                limit: parseInt(req.query.limit),
-                skip: parseInt(req.query.skip)
-            }
-        }).execPopulate()
-        res.send(req.Product.FillterProduct)
-    } catch (error) {
-        res.status(500).send()
-    }
-};
-
 module.exports = {
   getProducts,
   getProductById,
   deleteProduct,
   getProductByName,
-  FillterProduct,
 };

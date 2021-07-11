@@ -4,7 +4,6 @@ const connectDB = require('./config/db');
 const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
 const orderRouter = require('./routes/orderRoutes');
-//const addressRouter = require('./routes/addressRoutes');
 
 connectDB();
 
@@ -25,7 +24,6 @@ app.use((req, res, next) => {
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);
-//app.use('/api/address', addressRouter);
 
 app.use((req, res, next)=>{
     const error = new Error('Not found'); 

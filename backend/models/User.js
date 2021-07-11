@@ -9,8 +9,6 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-    //email regex: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
-    //match is used to determine whether the pattern resembles an email address
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
     password: {
