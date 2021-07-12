@@ -40,8 +40,9 @@ const ProductScreen = ({ match, history }) => {
               <img src={product.src} alt="/" />
             </div>
             <div>
-              <img src={product.imgDetail[2]}></img>
-              {/* viết code chỗ này cũng dùm map() */}
+              {product.imgDetail && product.imgDetail.map((Img) => (
+                <img key={product._id} src={Img.toString()} />
+              ))}
             </div>
           </div>
           <div className="productscreen__right">
