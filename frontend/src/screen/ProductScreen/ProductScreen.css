@@ -1,11 +1,16 @@
 .productscreen {
   max-width: 1300px;
   margin: 1rem auto;
-  margin-top: 50px;
+  margin-top: 150px;
 
   display: flex;
   justify-content: space-between;
   font-family: "Cabin", sans-serif;
+}
+
+.productscreen__left {
+  max-width: 780px;
+  width: 100%;
 }
 
 .left__image {
@@ -167,4 +172,26 @@
     width: 100%;
     margin: 0;
   }
+}
+
+.size__css button {
+  width: 100px;
+  height: 48px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(145, 145, 145);
+  border-radius: 4px;
+  outline: none;
+  margin-right: 5px;
+  cursor: pointer;
+  background: #fff;
+}
+
+.size__css button:hover {
+  border: 2px solid #000;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

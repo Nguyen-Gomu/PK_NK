@@ -37,11 +37,9 @@ const ProductScreen = ({ match, history }) => {
         <>
           <div className="productscreen__left">
             <div className="left__image">
-              <img src={product.src} alt="/" />
-            </div>
-            <div>
+              {/* <img src={product.src} alt="/" /> */}
               {product.imgDetail && product.imgDetail.map((Img) => (
-                <img key={product._id} src={Img.toString()} />
+                <img key={product._id} src={Img} />
               ))}
             </div>
           </div>
@@ -54,30 +52,32 @@ const ProductScreen = ({ match, history }) => {
               <p>{product.content}</p>
             </div>
             <div className="right__info">
-              <div className="size">
-              <p>
-                size:
-                    {/* nó giống giống như thằng Qty */}
-              </p>
+              <div className="size__css">
+                {/* <p>Select Size</p> */}
+                  {product.size && product.size.map((xl) => (
+                      <button key={product._id} >{xl}</button>
+                  ))}
               </div>
-              <p>
-                Status:
-                <span>
-                   {product.count > 0 ? "In Stock" : "Out of Stock"}
+              
+              <div className="qty">
+                <p>
+                  Status:
+                  <span>
+                    {product.count > 0 ? "In Stock" : "Out of Stock"}
 
-                </span>
-              </p>
-              <p>
-                Qty  
-                <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                  {[...Array(product.count).keys()].map((x) => (
-                    <option key={x + 1} value={x + 1}>
-                      {x + 1}
-                    </option>
-                  ))} 
-                </select>
-
-              </p>
+                  </span>
+                </p>
+                <p>
+                  Qty  
+                  <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                    {[...Array(product.count).keys()].map((x) => (
+                      <option key={x + 1} value={x + 1}>
+                        {x + 1}
+                      </option>
+                    ))} 
+                  </select>
+                </p>
+              </div>
               <p>
                 <button type="button" onClick={addToCartHandler}>
                   Add To Cart
