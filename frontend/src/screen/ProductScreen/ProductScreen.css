@@ -69,81 +69,44 @@
   border: none;
 }
 
-/* 
-.productscreen__left {
+.size__css {
+  position: relative;
+  width: auto;
   display: flex;
-  flex: 0.8;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.left__image {
-  margin: 1rem;
-  flex: 0.6;
+.input__size {
+  position: absolute !important;
+  /* height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; */
 }
 
-.left__image img {
-  width: 500px;
-}
-
-.left__info {
-  margin: 1rem;
-  flex: 0.4;
-  background: #fff;
-  height: fit-content;
-  font-size: 0.9rem;
-}
-
-.left__name {
-  font-weight: bold;
-  font-size: 1.3rem;
-}
-
-.left__info > p,
-.right__info > p {
-  padding: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.left__info > p:last-child,
-.right__info > p:last-child {
-  border: none;
-}
-
-.productscreen__right {
-  flex: 0.2;
-}
-
-.right__info {
-  width: 250px;
-  margin: 1rem;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-.right__info p {
-  padding: 1rem;
-  font-size: 0.8rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.right__info p > button {
-  grid-column: 1/-1;
-  width: 100%;
-  padding: 10px 16px;
-  background: #171717;
-  color: #f4f4f4;
-  border: 1px solid #171717;
+.size__css .size label {
+  width: 100px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(145, 145, 145);
+  border-radius: 3px;
   cursor: pointer;
-  border-radius: 5px;
+  padding: 10px 0;
+  margin-bottom: 15px;
 }
 
-.right__info p > button:hover {
-  background-color: #d1d1d1;
+.size__css .size label:hover {
+  border: 2.3px solid rgb(0, 0, 0);
 }
 
-.right__info select {
-  padding: 10px 16px;
-} */
+.label__size:focus ~ label {
+  background-color: #000;
+}
 
 @media (max-width: 960px) {
   .productscreen {
@@ -172,26 +135,4 @@
     width: 100%;
     margin: 0;
   }
-}
-
-.size__css label {
-  width: 100px;
-  height: 48px;
-  margin-bottom: 10px;
-  border: 1px solid rgb(145, 145, 145);
-  border-radius: 4px;
-  outline: none;
-  margin-right: 5px;
-  cursor: pointer;
-  background: #fff;
-}
-
-.size__css label:hover {
-  border: 2px solid #000;
-}
-
-.qty {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }

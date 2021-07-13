@@ -57,9 +57,9 @@ const ProductScreen = ({ match, history }) => {
               <div className="size__css">
                  {/* <p>Select Size</p> */}
                  {product.size && product.size.map((xl) => (
-                    <div>
-                      <input type="radio" value={xl} id={xl} name={product._id} onChange={(e) => setSizes(e.target.value)}/>
-                      <label for={xl} tabIndex="-1">{xl}</label>
+                    <div className="size">
+                      <input className="input__size" type="radio" value={xl} id={xl} name={product._id} onChange={(e) => setSizes(e.target.value)}/>
+                      <label className="label__size" for={xl} tabIndex="-1">{xl}</label>
                     </div>
                 ))}
 
