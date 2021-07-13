@@ -23,9 +23,11 @@ const ProductScreen = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty));
+    dispatch(addToCart(product._id, qty,sizes));
     history.push(`/cart`);
   };
+
+  // const handleClick = () => setSizes(sizes);
 
   return (
     <div className="productscreen">
@@ -53,10 +55,14 @@ const ProductScreen = ({ match, history }) => {
             </div>
             <div className="right__info">
               <div className="size__css">
-                {/* <p>Select Size</p> */}
-                  {product.size && product.size.map((xl) => (
-                      <button key={product._id} >{xl}</button>
-                  ))}
+                 {/* <p>Select Size</p> */}
+                 {product.size && product.size.map((xl) => (
+                    <div>
+                      <input type="radio" value={xl} id={xl} name={product._id} onChange={(e) => setSizes(e.target.value)}/>
+                      <label for={xl} tabIndex="-1">{xl}</label>
+                    </div>
+                ))}
+
               </div>
               
               <div className="qty">

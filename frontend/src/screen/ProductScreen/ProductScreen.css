@@ -174,7 +174,7 @@
   }
 }
 
-.size__css button {
+.size__css label {
   width: 100px;
   height: 48px;
   margin-bottom: 10px;
@@ -186,7 +186,7 @@
   background: #fff;
 }
 
-.size__css button:hover {
+.size__css label:hover {
   border: 2px solid #000;
 }
 
