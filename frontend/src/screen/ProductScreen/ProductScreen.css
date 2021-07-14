@@ -104,8 +104,20 @@
   border: 2.3px solid rgb(0, 0, 0);
 }
 
-.label__size:focus ~ label {
-  background-color: #000;
+/* .input__size:focus + .label__size,
+.input__size:invalid + .label__size {
+  background-color: 000;
+} */
+
+input:focus + label {
+  background-color: rgb(100, 100, 100);
+  color: #fff;
+}
+
+.qty {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 960px) {

@@ -20,15 +20,18 @@ const CartScreen = () => {
 
     const qtyChangeHandler = (id, qty) => {
         dispatch(addToCart(id, qty));
-      };
+    };
 
     const removeFromCartHandler = (id) => {
         dispatch(removeFromCart(id));
     };
 
+
     const getCartCount = () => {
         return cartItems.reduce((qty,item) => Number(item.qty) + qty, 0);
     };
+
+
 
     const getCartTotal = () => {
         return cartItems

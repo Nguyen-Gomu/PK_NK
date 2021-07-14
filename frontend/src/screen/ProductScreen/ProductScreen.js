@@ -9,8 +9,8 @@ import { addToCart } from "../../redux/actions/cartActions";
 
 
 const ProductScreen = ({ match, history }) => {
-  const [qty, setQty] = useState(1);
   const [sizes, setSizes] = useState("");
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.getProductDetails);
@@ -27,7 +27,6 @@ const ProductScreen = ({ match, history }) => {
     history.push(`/cart`);
   };
 
-  // const handleClick = () => setSizes(sizes);
 
   return (
     <div className="productscreen">
@@ -58,23 +57,28 @@ const ProductScreen = ({ match, history }) => {
                  {/* <p>Select Size</p> */}
                  {product.size && product.size.map((xl) => (
                     <div className="size">
-                      <input className="input__size" type="radio" value={xl} id={xl} name={product._id} onChange={(e) => setSizes(e.target.value)}/>
+                      <input 
+                        className="input__size" 
+                        type="radio" 
+                        value={xl} 
+                        id={xl} 
+                        name={product._id} 
+                        onChange={(e) => setSizes(e.target.value)}
+                      />
                       <label className="label__size" for={xl} tabIndex="-1">{xl}</label>
                     </div>
                 ))}
-
+              <p>state size:{sizes},{typeof(sizes)}</p>
               </div>
-              
               <div className="qty">
                 <p>
                   Status:
                   <span>
                     {product.count > 0 ? "In Stock" : "Out of Stock"}
-
                   </span>
                 </p>
                 <p>
-                  Qty  
+                  Qty :   
                   <select value={qty} onChange={(e) => setQty(e.target.value)}>
                     {[...Array(product.count).keys()].map((x) => (
                       <option key={x + 1} value={x + 1}>
@@ -82,6 +86,7 @@ const ProductScreen = ({ match, history }) => {
                       </option>
                     ))} 
                   </select>
+                  <p>gia tri cua qty  {qty}, qty type of   {typeof(qty)}</p>
                 </p>
               </div>
               <p>

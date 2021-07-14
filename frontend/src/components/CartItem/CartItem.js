@@ -34,7 +34,7 @@ const CartItem = ({item,removeHandler,qtyChangeHandler}) => {
 
               <div className="size">
                 <p>Size:</p>
-                <p>....</p>
+                <p>{item.sizes}</p>
               </div>
 
               <p className="cartitem__deleteBtn" onClick={() => removeHandler(item.product)}>
