@@ -18,8 +18,8 @@ const CartScreen = () => {
 
     useEffect(() => {},[]);
 
-    const qtyChangeHandler = (id, qty) => {
-        dispatch(addToCart(id, qty));
+    const ChangeHandler = (id, qty, sizes) => {
+        dispatch(addToCart(id, qty, sizes));
     };
 
     const removeFromCartHandler = (id) => {
@@ -59,7 +59,7 @@ const CartScreen = () => {
                             key={item.product}
                             item={item}
                             removeHandler={removeFromCartHandler}
-                            qtyChangeHandler={qtyChangeHandler}
+                            ChangeHandler={ChangeHandler}
                         />
                     ))
                 )}

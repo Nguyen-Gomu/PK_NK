@@ -23,7 +23,7 @@ const ProductScreen = ({ match, history }) => {
   }, [dispatch, match, product]);
 
   const addToCartHandler = () => {
-    dispatch(addToCart(product._id, qty,sizes));
+    dispatch(addToCart(product._id, qty, sizes));
     history.push(`/cart`);
   };
 
@@ -68,7 +68,6 @@ const ProductScreen = ({ match, history }) => {
                       <label className="label__size" for={xl} tabIndex="-1">{xl}</label>
                     </div>
                 ))}
-              <p>state size:{sizes},{typeof(sizes)}</p>
               </div>
               <div className="qty">
                 <p>
@@ -86,7 +85,6 @@ const ProductScreen = ({ match, history }) => {
                       </option>
                     ))} 
                   </select>
-                  <p>gia tri cua qty  {qty}, qty type of   {typeof(qty)}</p>
                 </p>
               </div>
               <p>
