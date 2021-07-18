@@ -4,6 +4,8 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// nhan tu model tu userModel
+
 const user_signup = (req, res, next) => {
     User.find({ email: req.body.email }).exec()
     .then(user => {

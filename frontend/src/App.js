@@ -11,7 +11,7 @@ import SignIn from './screen/User/Signin/Signin'
 import Checkout from './screen/Checkout/Checkout'
 import ProductScreen from './screen/ProductScreen/ProductScreen'
 import CartScreen from './screen/CartScreen/CartScreen'
-
+// import ForgotPassword from './screen/User/ForgotPassword/ForgotPassword'
 
 // component
 import HomeScreen from "./screen/HomeScreen/homeScreen";
@@ -40,6 +40,7 @@ function App() {
               <Route exact path="/product/:id" component={ProductScreen}/>
               <Route exact path="/cart" component={CartScreen}/>
               <Route path="/home" component={MainPage} exact/>
+              {/* <Route path="/password" component={ForgotPassword} exact/> */}
 
             </Switch>
             {/* <Footer/> */}
