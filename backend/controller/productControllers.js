@@ -2,10 +2,11 @@ const Product = require("../models/Product");
 
 const getProducts = async (req, res) => {
   try {
-    const {page = 1, limit = 20} = req.query;
+    const {page = 1, limit = 12, totalRows = 253 } = req.query;
     const products = await Product.find({})
     .limit(limit * 1)
     .skip((page - 1) * limit);
+
     res.json(products);
   } catch (error) {
     console.error(error);

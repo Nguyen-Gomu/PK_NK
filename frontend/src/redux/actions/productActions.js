@@ -1,11 +1,11 @@
 import * as actionTypes from "../constants/productConstants";
 import axios from "axios";
 
-export const getProducts = () => async (dispatch) => {
+export const getProducts = (paramstring) => async (dispatch) => {
   try {
     dispatch({ type: actionTypes.GET_PRODUCTS_REQUEST });
 
-    const { data } = await axios.get("/api/products");
+    const { data } = await axios.get(`http://localhost:5000/api/products/?${paramstring}`);
 
     dispatch({
       type: actionTypes.GET_PRODUCTS_SUCCESS,
