@@ -12,7 +12,7 @@ const CartItem = ({item,removeHandler,ChangeHandler}) => {
             <div className="cartitem__info">
               <div className="cartitem__info--top">
                 <Link to={`/product/${item.product}`} className="cartitem__name">
-                    <p>{item.name}</p>
+                    <p className="cartitem__name">{item.name}</p>
                 </Link>
                 <p className="cartitem__price">{Intl.NumberFormat('en-US').format(item.price)}₫</p>
               </div>
@@ -48,7 +48,7 @@ const CartItem = ({item,removeHandler,ChangeHandler}) => {
               </div>
 
               <p className="cartitem__deleteBtn" onClick={() => removeHandler(item.product)}>
-                  remove
+                  Remove
               </p>
             </div>
             

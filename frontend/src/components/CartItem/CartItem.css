@@ -3,7 +3,7 @@
   padding: 1rem;
   display: flex;
   justify-content: space-between;
-  background: #fff;
+  background-color: #f6f6f6;
   margin-bottom: 8px;
 }
 
@@ -16,6 +16,11 @@
 .cartitem__info {
   max-width: 600px;
   width: 100%;
+}
+
+.cartitem__name {
+  font-size: 20px;
+  color: #000 !important;
 }
 
 .cartitem__info--top {
@@ -45,6 +50,7 @@
 .cartitem__deleteBtn {
   cursor: pointer;
   width: 15%;
+  color: red !important;
 }
 
 .cartitem__deleteBtn:hover {

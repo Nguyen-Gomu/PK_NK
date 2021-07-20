@@ -15,6 +15,8 @@ import man from '../assets/images/man.jpg'
 import woman from '../assets/images/woman.jpg'
 import Products from '../components/Product/Product';
 
+// import HeroSection  from '../components/Hero/index' 
+
 // //////
 
 export class MainPage extends Component{

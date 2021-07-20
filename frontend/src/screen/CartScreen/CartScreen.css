@@ -11,7 +11,7 @@
 .cartscreen__left {
   flex: 0.7;
   margin-right: 1rem;
-  background: transparent;
+  background-color: #f6f6f6;
   padding: 1rem;
 }
 

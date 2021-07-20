@@ -1,11 +1,12 @@
 .productscreen {
   max-width: 1300px;
   margin: 1rem auto;
-  margin-top: 150px;
+  margin-top: 80px;
 
   display: flex;
   justify-content: space-between;
   font-family: "Cabin", sans-serif;
+  background-color: #f6f6f6;
 }
 
 .productscreen__left {
@@ -19,13 +20,17 @@
 
 .left__image img {
   max-width: 700px;
-  width: 100%;
+  width: 75.5%;
 }
 
 .productscreen__right {
   max-width: 440px;
   width: 100%;
   margin: 1rem;
+  position: fixed;
+  right: 5%;
+  top: 10%;
+  background-color: #f6f6f6;
 }
 
 .productscreen__right p {
