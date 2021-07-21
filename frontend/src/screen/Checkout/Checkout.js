@@ -12,12 +12,14 @@ import Typography from '@material-ui/core/Typography';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
+import Box from "@material-ui/core/Box";
 
 
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
     position: 'relative',
+
   },
   layout: {
     width: 'auto',
@@ -81,11 +83,11 @@ function Checkout() {
   };
 
   return (
-    <React.Fragment>
+      <React.Fragment>
       <CssBaseline />
       <main className={classes.layout}>
-        <Paper className={classes.paper}>
-          <Typography component="h1" variant="h4" align="center">
+        <Paper className={classes.paper} >
+          <Typography component="h1" variant="h4" align="center" >
             Checkout
           </Typography>
           <Stepper activeStep={activeStep} className={classes.stepper}>

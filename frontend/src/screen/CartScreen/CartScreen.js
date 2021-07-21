@@ -83,7 +83,7 @@ const CartScreen = () => {
                     <span>Total</span>
                     <p>{Intl.NumberFormat('en-US').format(getCartTotal())}₫</p>
                 </div>
-                <Link to="/product" className="cart" >
+                <Link to="/checkout" className="cart" >
                     Guest Checkout
                 </Link>
             </div>

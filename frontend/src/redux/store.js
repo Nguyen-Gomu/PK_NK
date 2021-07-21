@@ -27,6 +27,7 @@ const INITIAL_STATE = {
   cart: {
     cartItems: cartItemsInLocalStorage,
   },
+  // order:{}
   
 };
 
