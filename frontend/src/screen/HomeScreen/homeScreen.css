@@ -1,7 +1,9 @@
 .homescreen {
-  max-width: 1300px;
-  margin: 1rem auto;
-  margin-top:100px;
+  /* max-width: 1300px; */
+  /* margin: auto; */
+  padding: 0 80px;
+  margin-top: 83px;
+  background-color: #f6f6f6;
 }
 
 .homescreen__title {
@@ -14,12 +16,12 @@
 .homescreen__products {
   /* display: grid;
   grid-template-columns: repeat(3, 1fr); */
-    width: auto;
-    height:235px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    font-family: 'Cabin', sans-serif;
+  /* height: 235px; */
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-family: "Cabin", sans-serif;
 }
 
 @media (max-width: 1232px) {
@@ -35,7 +37,7 @@
 }
 
 @media (max-width: 630px) {
-  .homeScreen__products{
+  .homeScreen__products {
     grid-template-columns: 1fr;
   }
 }

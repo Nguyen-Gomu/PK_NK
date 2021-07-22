@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './pagination.css'
 
 Pagination.prototype={
     pagination: PropTypes.object.isRequired,
@@ -22,19 +23,23 @@ function Pagination(props) {
     }
 
     return(
-        <div>
+        <div className="pagination_container">
             <button 
+            className="pagination_btn "
                 disabled={page <= 1}
                 onClick={() => handlePageChange(page - 1)}    
             >
+                <span className="arrow1"><i class="fas fa-arrow-left"></i></span>
                 Prev
             </button>
 
             <button
+                className="pagination_btn"
                 disabled={page >= totalPages}
                 onClick={() => handlePageChange(page + 1)}
             >
-                Next
+                Next   
+               <span className="arrow2"> <i class="fas fa-arrow-right"></i></span>
             </button>
         </div>
     )

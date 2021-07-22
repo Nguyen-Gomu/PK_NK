@@ -1,0 +1,33 @@
+.pagination_container {
+  /* position: absolute;
+  top: 293%; */
+  position: relative;
+}
+
+.pagination_btn {
+  font-size: 16px;
+  padding: 8px 30px;
+  margin: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.arrow1 {
+  margin-right: 20px;
+}
+
+.arrow2 {
+  margin-left: 20px;
+}
+
+.pagination_btn:hover {
+  background-color: red;
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .pagination_container {
+    position: relative;
+  }
+}
