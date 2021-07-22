@@ -51,7 +51,7 @@ import { useSelector } from "react-redux";
                             </li>
                             <li><Link to="/">HOME</Link></li>
                             <li>
-                                <Link to="/product" id="footwear">Footwear</Link>
+                                <Link to="/product" id="footwear">PRODUCTS</Link>
                                 {/* <div className="menu__sub">
                                     <ul>
                                         <li><Link to="/">Newest Sneakers</Link></li>
@@ -64,7 +64,7 @@ import { useSelector } from "react-redux";
                                 </div> */}
                             </li>
                             <li>
-                                <Link to="/contact">PRODUCTS</Link>
+                                <Link to="/contact">CONTACT</Link>
                                 {/* <div className="menu__sub">
                                     <ul>
                                         <li><Link to="/">CONIC®</Link></li>
@@ -80,7 +80,7 @@ import { useSelector } from "react-redux";
                                 </div> */}
                             </li>
                             <li>
-                                <Link to="/about">Accessories</Link>
+                                <Link to="/about">ABOUT US</Link>
                                 {/* <div className="menu__sub">
                                     <ul>
                                         <li><Link to="/">Watch</Link></li>
@@ -95,7 +95,7 @@ import { useSelector } from "react-redux";
                                     </ul>
                                 </div> */}
                             </li>
-                            <li><Link to="/login">Used</Link></li>
+                            {/* <li><Link to="/login">Used</Link></li> */}
                         </ul>
 
                     </nav>

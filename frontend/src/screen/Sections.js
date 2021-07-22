@@ -10,6 +10,7 @@ import ProductScreen from './ProductScreen/ProductScreen'
 import CartScreen from './CartScreen/CartScreen'
 import HomeScreen from "./HomeScreen/homeScreen";
 import {Route} from 'react-router-dom'
+import Glab from './Info/form'
 
 export class Sections extends Component {
     render() {
@@ -23,7 +24,7 @@ export class Sections extends Component {
                 <Route exact path="/product/:id" component={ProductScreen}/>
                 <Route exact path="/cart" component={CartScreen}/>
                 <Route path="/home" component={MainPage} exact/>
-
+                <Route path="/glab" component={Glab}/>
             </section>
         )
     }
