@@ -49,10 +49,10 @@ import { useSelector } from "react-redux";
                             <li className="close" onClick={click}>
                                 <i class="fas fa-times"></i>
                             </li>
-                            <li><Link to="/">FEATURES</Link></li>
+                            <li><Link to="/">HOME</Link></li>
                             <li>
                                 <Link to="/product" id="footwear">Footwear</Link>
-                                <div className="menu__sub">
+                                {/* <div className="menu__sub">
                                     <ul>
                                         <li><Link to="/">Newest Sneakers</Link></li>
                                         <li><Link to="/">Lifestyle</Link></li>
@@ -61,11 +61,11 @@ import { useSelector } from "react-redux";
                                         <li><Link to="/">Gym & Training</Link></li>
                                         <li><Link to="/">Sandal</Link></li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </li>
                             <li>
-                                <Link to="/contact">Apparel</Link>
-                                <div className="menu__sub">
+                                <Link to="/contact">PRODUCTS</Link>
+                                {/* <div className="menu__sub">
                                     <ul>
                                         <li><Link to="/">CONIC®</Link></li>
                                         <li><Link to="/">Hoodies</Link></li>
@@ -77,11 +77,11 @@ import { useSelector } from "react-redux";
                                         <li><Link to="/">Jackets</Link></li>
                                         <li><Link to="/">Sweaters</Link></li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </li>
                             <li>
                                 <Link to="/about">Accessories</Link>
-                                <div className="menu__sub">
+                                {/* <div className="menu__sub">
                                     <ul>
                                         <li><Link to="/">Watch</Link></li>
                                         <li><Link to="/">Socks</Link></li>
@@ -93,10 +93,11 @@ import { useSelector } from "react-redux";
                                         <li><Link to="/">Bearbricks</Link></li>
                                         <li><Link to="/">Face Mask</Link></li>
                                     </ul>
-                                </div>
+                                </div> */}
                             </li>
                             <li><Link to="/login">Used</Link></li>
                         </ul>
+
                     </nav>
                 </div>
             </header>

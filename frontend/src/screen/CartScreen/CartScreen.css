@@ -3,6 +3,9 @@
   padding: 100px;
   justify-content: space-between;
   background-color: #f6f6f6;
+  min-height: 100vh;
+  z-index: 100;
+  position: relative;
 }
 
 .cartscreen h2 {
@@ -50,7 +53,7 @@
 }
 
 .cartscreen__right div button:hover {
-  opacity: 0.9;
+  opacity: 0.6;
 }
 
 .cartscreen .summary {
@@ -58,7 +61,7 @@
   width: 100%;
   padding: 1rem;
   position: fixed;
-  top: 24%;
+  top: 23%;
   right: 5%;
 }
 
@@ -114,12 +117,12 @@
   width: 100%;
   padding: 18px 24px;
   border-radius: 30px;
+  font-weight: bold;
 }
 
 @media (max-width: 1320px) {
   .cartscreen {
-    max-width: 900px;
-    margin-top: 100px;
+    margin-top: 80px;
   }
 
   .summary {
@@ -127,20 +130,14 @@
   }
 }
 
-@media (max-width: 960px) {
-  .cartscreen {
-    max-width: 800px;
-  }
-}
-
 @media (max-width: 1236px) {
   .cartscreen {
     flex-direction: column;
   }
-
+  /* 
   .cartscreen__right {
     margin: 1rem;
-  }
+  } */
   .cartscreen .summary {
     position: relative;
   }
@@ -148,17 +145,16 @@
 
 @media (max-width: 550px) {
   .cartscreen {
-    margin-top: 100px;
-    margin: 10px;
-
+    margin-top: 70px;
+    padding: 0;
     max-width: 550px;
     width: 100%;
   }
 
   .cartscreen .summary {
     position: relative;
-    max-width: 550px;
     width: 100%;
     padding: 1rem;
+    margin: 0 3rem;
   }
 }

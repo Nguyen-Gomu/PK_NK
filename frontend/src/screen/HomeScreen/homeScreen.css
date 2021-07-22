@@ -2,8 +2,10 @@
   /* max-width: 1300px; */
   /* margin: auto; */
   padding: 0 80px;
-  margin-top: 83px;
   background-color: #f6f6f6;
+  min-height: 100vh;
+  z-index: 100;
+  position: relative;
 }
 
 .homescreen__title {

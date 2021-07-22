@@ -74,6 +74,12 @@ const SideDrawer = ({show,click}) => {
                         </li>
                     <li><Link to="/login">Used</Link></li>
                 </ul>
+                <div className="search">
+                    <form className="form">
+                        <input type="text" placeholder="Search"></input>
+                        <button className="btn__arrow"><i class="fas fa-arrow-left"></i></button>
+                    </form>
+                </div>
             </nav>
         </div>
     )

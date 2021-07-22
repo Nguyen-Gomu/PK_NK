@@ -17,6 +17,11 @@ import Box from "@material-ui/core/Box";
 
 
 const useStyles = makeStyles((theme) => ({
+  container:{
+    zIndex: theme.spacing(14),
+    position:'relative',
+  },
+
   appBar: {
     position: 'relative',
 
@@ -55,15 +60,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+// const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Shipping address',  'Review your order'];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
       return <AddressForm />;
+    // case 1:
+    //   return <PaymentForm />;
     case 1:
-      return <PaymentForm />;
-    case 2:
       return <Review />;
     default:
       throw new Error('Unknown step');
@@ -83,7 +89,8 @@ function Checkout() {
   };
 
   return (
-      <React.Fragment>
+      <Box className={classes.container} bgcolor="#fafafa">
+        <React.Fragment>
       <CssBaseline />
       <main className={classes.layout}>
         <Paper className={classes.paper} >
@@ -128,10 +135,12 @@ function Checkout() {
                 </div>
               </React.Fragment>
             )}
+            <Button>km kim</Button>
           </React.Fragment>
         </Paper>
       </main>
     </React.Fragment>
+      </Box>
   );
 }
 

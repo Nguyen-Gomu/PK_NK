@@ -1,17 +1,37 @@
-import "./homeScreen.css";
+import { css } from "@emotion/react";
+import querystring from "query-string";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import querystring from "query-string"
-
+import BeatLoader from "react-spinners/BeatLoader";
+import Pagination from "../../components/Pagination/pagination";
 // Components
 import Product from "../../components/Product/Product";
-import Pagination from "../../components/Pagination/pagination";
-
 //Actions
 import { getProducts as listProducts } from "../../redux/actions/productActions";
+import "./homeScreen.css";
+
+
+const override = css`
+  display: flex;
+  margin: 0 auto;
+  background-color:#f6f6f6;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+`;
 
 const HomeScreen = () => {
   const dispatch = useDispatch([]);
+  // const [loadingpage,setLoadingpage] = useState(false);
+
+  // useEffect(() => {
+  //   setLoadingpage(true);
+  //   setTimeout(() => {
+  //     setLoadingpage(false);
+  //   },8000)
+  // },[])
 
   const [pagination, setPagination] = useState({
     page: 1,
@@ -45,9 +65,16 @@ const HomeScreen = () => {
   return (
     <div className="homescreen">
       <div className="homescreen__products">
-      {loading ? (
-          <h2>Loading...</h2>
-        ) : error ? (
+      {loading ? 
+          <BeatLoader
+            className="loading"
+            color={"#000"} 
+            loading={loading} 
+            css={override} 
+            size={15} 
+            margin={2}
+          />
+         : error ? (
           <h2>{error}</h2>
         ) : (
           products.map((product) => (

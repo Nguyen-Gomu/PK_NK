@@ -14,7 +14,7 @@ import Section from './screen/Sections'
 import HomeScreen from "./screen/HomeScreen/homeScreen";
 import Backdrop from './components/Backdrop/Backdrop'
 import SideDrawer from './components/SiderDrawer/SiderDrawer'
-// import Footer from './components/Footer'
+import Footer from './components/Footer/footer'
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
              <Section/>
              {/* <ImageSlider/> */}
             </Switch>
-            {/* <Footer/> */}
+            <Footer/>
           </Router>
         </main>
   );

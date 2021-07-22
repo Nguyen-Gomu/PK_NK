@@ -14,6 +14,7 @@
   "author": "PK_Team",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "^11.4.0",
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
@@ -23,8 +24,10 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.13",
     "node-pre-gyp": "^0.17.0",
+    "react-icons": "^4.2.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
+    "react-spinners": "^0.11.0",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
