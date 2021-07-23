@@ -3,6 +3,9 @@
   font-family: "Cabin", sans-serif;
   background-color: #f6f6f6;
   padding-bottom: 15px;
+  min-height: 100vh;
+  z-index: 100;
+  position: relative;
 }
 
 .glab__img img {
@@ -44,4 +47,91 @@
   color: #000;
   padding: 5px;
   margin-right: 10px;
+}
+
+/* Consignment */
+
+.consignment__container {
+  position: relative;
+  min-height: 100vh;
+  z-index: 100;
+  position: relative;
+  background-color: #f6f6f6;
+}
+.consignment__info {
+  width: 50%;
+  margin: 0 auto 0;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.row {
+  margin: 30px 0;
+}
+
+.consignment__info h3 {
+  font-size: 30pt;
+  margin-bottom: 15px;
+}
+
+.consignment__title {
+  font-weight: bold;
+}
+
+.consignment__content span {
+  font-size: 13px;
+}
+
+/* connect */
+
+.ConnectGlab__container {
+  position: relative;
+  min-height: 100vh;
+  z-index: 100;
+  position: relative;
+  background-color: #f6f6f6;
+}
+
+.ConnectGlab__info {
+  width: 50%;
+  margin: 0 auto 0;
+  text-align: left;
+  margin-bottom: 50px;
+  padding-top: 50px;
+}
+
+.ConnectGlab__title {
+  font-size: 30pt;
+  margin-bottom: 15px;
+}
+
+.ConnectGlab__item span {
+  font-size: 13px;
+}
+
+/* Delivery */
+
+.Delivery__container {
+  position: relative;
+  min-height: 100vh;
+  z-index: 100;
+  position: relative;
+  background-color: #f6f6f6;
+}
+
+.Delivery__info {
+  width: 50%;
+  margin: 0 auto 0;
+  text-align: left;
+  margin-bottom: 50px;
+  padding-top: 50px;
+}
+
+.Delivery__title {
+  font-size: 30pt;
+  margin-bottom: 15px;
+}
+
+.Delivery__item span {
+  font-size: 13px;
 }

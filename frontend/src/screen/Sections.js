@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
-
+import { Route } from 'react-router-dom'
+import CartScreen from './CartScreen/CartScreen'
+import Checkout from './Checkout/Checkout'
+import HomeScreen from "./HomeScreen/homeScreen"
+import ConnectGlab from './Info/Connect'
+import ConsignmentTerm from './Info/ConsignmentTerm'
+import Delivery from './Info/Delivery'
+import FAQs from './Info/FAQs'
+import Glab from './Info/form'
 import MainPage from './MainPage'
-
-
+import ProductScreen from './ProductScreen/ProductScreen'
 import SignIn from './User/Signin/Signin'
 import SingUp from './User/Signup/Signup'
-import Checkout from './Checkout/Checkout'
-import ProductScreen from './ProductScreen/ProductScreen'
-import CartScreen from './CartScreen/CartScreen'
-import HomeScreen from "./HomeScreen/homeScreen";
-import {Route} from 'react-router-dom'
-import Glab from './Info/form'
+
+
+
 
 export class Sections extends Component {
     render() {
@@ -25,6 +29,10 @@ export class Sections extends Component {
                 <Route exact path="/cart" component={CartScreen}/>
                 <Route path="/home" component={MainPage} exact/>
                 <Route path="/glab" component={Glab}/>
+                <Route path="/home/consignmentterm" component={ConsignmentTerm}/>
+                <Route path="/home/connect" component={ConnectGlab}/>
+                <Route path="/home/delivery" component={Delivery}/>
+                <Route path="/home/faqs" component={FAQs} />
             </section>
         )
     }

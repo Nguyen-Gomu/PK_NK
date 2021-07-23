@@ -13,10 +13,10 @@ function Footer() {
                     <div className="row-1">
                         <ul className="row-1-list">
                             <li className="row-1-item">ABOUT US</li>
-                            <li className="row-1-item">FAQs</li>
-                            <li className="row-1-item">REFUND POLICY</li>
-                            <li className="row-1-item">PRIVACY</li>
-                            <li className="row-1-item">TERMS OF SERVICE</li>
+                            <li className="row-1-item"><a href="http://localhost:3000/home/faqs">FAQs</a></li>
+                            <li className="row-1-item"><a href="http://localhost:3000/home/consignmentterm">CONSIGNMENT TERM</a></li>
+                            <li className="row-1-item"><a href="http://localhost:3000/home/connect">CONNECT US</a></li>
+                            <li className="row-1-item"><a href="http://localhost:3000/home/delivery">DELIVERY AND EXCHANGE</a></li>
                         </ul>
                     </div>
                     <div className="subscribe">

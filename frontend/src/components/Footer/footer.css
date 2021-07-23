@@ -34,7 +34,11 @@ footer {
   margin-bottom: 15px;
 }
 
-.row-1-item:hover {
+.row-1-item a {
+  color: #fff;
+}
+
+.row-1-item a:hover {
   color: #4a4a4a;
 }
 
