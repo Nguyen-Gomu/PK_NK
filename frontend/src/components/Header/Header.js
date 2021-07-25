@@ -49,7 +49,7 @@ import { useSelector } from "react-redux";
                             <li className="close" onClick={click}>
                                 <i class="fas fa-times"></i>
                             </li>
-                            <li><Link to="/">HOME</Link></li>
+                            <li><Link to="/home">HOME</Link></li>
                             <li>
                                 <Link to="/" id="footwear">PRODUCTS</Link>
                                 {/* <div className="menu__sub">
@@ -64,7 +64,7 @@ import { useSelector } from "react-redux";
                                 </div> */}
                             </li>
                             <li>
-                                <Link to="/contact">CONTACT</Link>
+                                <Link to="/home/consignmentterm">CONSIGNMENT TERM</Link>
                                 {/* <div className="menu__sub">
                                     <ul>
                                         <li><Link to="/">CONIC®</Link></li>

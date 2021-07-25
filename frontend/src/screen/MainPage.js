@@ -15,6 +15,8 @@ import man from '../assets/images/man.jpg'
 import woman from '../assets/images/woman.jpg'
 import Products from '../components/Product/Product';
 
+
+import adidas from '../assets/videos/adiasssss.mp4'
 // import HeroSection  from '../components/Hero/index' 
 
 // //////
@@ -23,19 +25,31 @@ export class MainPage extends Component{
     render() {
         return (
             <section className="home" id="home">
+                <div className="main__container">  
+                    <div className="video" >
+                        <video width="100%" height="100%" mute src={adidas} autoPlay mute loop/>
+                        <div className="video__info">
+                            <div className="video__info-detail">
+                                <img className="home__logo" src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/00-fw21-ivy-park-tease-cp-d_tcm221-703945.png"></img>
+                                <h2 className="home__title">FLEX PARK</h2>
+                                <button className="home__btn"><a className="home__btn-link" href="http://localhost:3000">SHOP NOW</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {/* Start Home */}
-                <div className="home__container">
+                {/* <div className="home__container">
                     <div className="home__data">
                         <h1 className="home__title">YOUR WORKHORSE <br/> WITH WINGS</h1>
                         <p className="home__description">nearly four decade and millions of miles later,<br/> the Pegasus 38 is really to run</p>
                         <Link href="/" className="button">Shop</Link>
                     </div>
                     <Link href="/"><img src={justdoit} alt="" className="home__img"></img></Link>
-                </div>
+                </div> */}
                 {/* End Home */}
 
                 {/* Start Hero */}
-                <div className="hero">
+                {/* <div className="hero">
                     <h1 className="hero__Logo">Trending Now</h1>
                     <div className="hero__container">
                         <div className="hero__right">
@@ -52,16 +66,15 @@ export class MainPage extends Component{
                             </div>
                             <Link href="/"><img src={clothing} alt="" className="hero__img"/></Link>
                         </div>
-                        
                     </div>
-                </div>
+                </div> */}
                 {/* End Hero */}
                 
                 {/* List Product */}
                 {/* End List Product */}
 
                 {/* Kind Products */}
-                <div className="kind">
+                {/* <div className="kind">
                     <h1 className="kind__title">Summer Essentials</h1>
                     <div className="kind__container">
                         <div className="kind__data">
@@ -85,12 +98,12 @@ export class MainPage extends Component{
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* End Kind */}
 
 
                 {/* Men-Woman */}
-                <div className="who">
+                {/* <div className="who">
                     <h1>WHO ARE YOU SHOPPING FOR?</h1>
                     <div className="who__container">
                         <div className="who__right">
@@ -106,7 +119,7 @@ export class MainPage extends Component{
                             </Link>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
 
             </section>

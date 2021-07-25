@@ -93,7 +93,6 @@ export default function AddressForm() {
             label="Use this address for payment details"
           />
         </Grid>
-        <Button>kim</Button>
       </Grid>
     </React.Fragment>
   );

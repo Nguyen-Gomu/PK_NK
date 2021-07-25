@@ -135,7 +135,6 @@ function Checkout() {
                 </div>
               </React.Fragment>
             )}
-            <Button>km kim</Button>
           </React.Fragment>
         </Paper>
       </main>

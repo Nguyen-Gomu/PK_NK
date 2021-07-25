@@ -1,10 +1,66 @@
 .home {
-  margin-top: 80px;
   background-color: #f6f6f6;
-  padding: 60px 40px;
+  padding-top: 40px;
+  min-height: 100vh;
+  z-index: 100;
+  position: relative;
 }
 
+.home a {
+  color: #000;
+}
 /* HOME CSS */
+
+.main__container {
+  position: relative;
+}
+
+.video__info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  margin: 25% 70px;
+  padding: 20 50px;
+
+  z-index: 10;
+}
+
+.video__info-detail {
+  /* display: flex;
+  align-items: flex-end; */
+}
+
+.home__logo {
+  width: 15%;
+  height: auto;
+}
+
+.video {
+  position: relative;
+  width: 100%;
+}
+
+.home__btn {
+  text-align: center;
+  padding: 13px 0px;
+  width: 13%;
+  background-color: #fff;
+  border: none;
+  border-radius: none !important;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1020) {
+  .home {
+    padding-top: 100px;
+  }
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------- */
 
 .home__container {
   position: relative;
