@@ -7,7 +7,14 @@ const getProducts = async (req, res) => {
     .limit(limit * 1)
     .skip((page - 1) * limit);
 
-    res.json(products);
+    res.json({
+      data: products,
+      pagination: {
+        page,
+        limit,
+        totalRows
+      }
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });

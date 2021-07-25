@@ -1,59 +1,29 @@
 import * as actionTypes from "../constants/ordersConstants";
+import axios from "axios";
 
 
-export const createOrder = (order) => (dispatch) => {
-  fetch("/api/orders", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(order),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      dispatch({ type:actionTypes.CREATE_ORDER, payload: data });
-      localStorage.clear("cartItems");
-      dispatch({ type: actionTypes.CLEAR_CART });
+export const createOrder = (order) => async (dispatch) => {
+  try {
+    dispatch({
+      type: actionTypes.ORDER_CREATE_REQUEST,
+      payload: order
     });
-};
-export const clearOrder = () => (dispatch) => {
-  dispatch({ type: actionTypes.CLEAR_ORDER });
-};
-export const fetchOrders = () => (dispatch) => {
-  fetch("/api/orders")
-    .then((res) => res.json())
-    .then((data) => {
-      dispatch({ type: actionTypes.FETCH_ORDERS, payload: data });
+
+    const { data: { data: newOrder } } = await axios.post("http://localhost:5000/api/orders", order);
+    
+    dispatch({
+      type: actionTypes.ORDER_CREATE_SUCCESS,
+      payload: newOrder
     });
-};
-
-
-
-
-
-// export const createOrder = (order) => (dispatch) => {
-//     fetch("/api/orders", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(order),
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         dispatch({ type:actionTypes.CREATE_ORDER, payload: data });
-//         localStorage.clear("cartItems");
-//         dispatch({ type: actionTypes.CLEAR_CART });
-//       });
-//   };
-//   export const clearOrder = () => (dispatch) => {
-//     dispatch({ type: actionTypes.CLEAR_ORDER });
-//   };
-//   export const fetchOrders = () => (dispatch) => {
-//     fetch("/api/orders")
-//       .then((res) => res.json())
-//       .then((data) => {
-//         dispatch({ type: actionTypes.FETCH_ORDERS, payload: data });
-//       });
-//   };
-  
+    
+    localStorage.clear('cart');
+    dispatch({
+      type: actionTypes.CLEAR_CART
+    })
+  } catch (error) {
+    dispatch({
+      type: actionTypes.ORDER_CREATE_FAIL,
+      payload: error.message
+    });
+  }
+}

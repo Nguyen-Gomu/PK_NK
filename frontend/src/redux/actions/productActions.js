@@ -9,7 +9,8 @@ export const getProducts = (paramstring) => async (dispatch) => {
 
     dispatch({
       type: actionTypes.GET_PRODUCTS_SUCCESS,
-      payload: data,
+      payload: data.data,
+      pagination: data.pagination
     });
   } catch (error) {
     dispatch({

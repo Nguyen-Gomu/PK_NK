@@ -6,11 +6,11 @@ export const getProductsReducer = (state = { products: [],pagination:{} }, actio
       return {
         loading: true,
         products: [],
-        pagination:{}
       };
     case actionTypes.GET_PRODUCTS_SUCCESS:
       return {
         products: action.payload,
+        pagination: action.pagination,
         loading: false,
       };
     case actionTypes.GET_PRODUCTS_FAIL:
