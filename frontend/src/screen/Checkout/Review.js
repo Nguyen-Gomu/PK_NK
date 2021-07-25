@@ -6,24 +6,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
-import React,{ useEffect, useState } from 'react'
+import React from 'react'
 import {useDispatch,useSelector} from "react-redux";
 import {createOrder} from '../../redux/actions/ordersAction';
-
-// const products = [
-//   { name: 'Jordan Break', desc: 'Slide', price: '889,000₫' },
-//   { name: 'Nike Air VaporMax Flyknit3', desc: 'Women\'s Shoe', price: '5,869,000₫' },
-//   // { name: 'Product 3', desc: 'Something else', price: '$6.51' },
-//   // { name: 'Product 4', desc: 'Best thing of all', price: '$14.11' },
-//   { name: 'Shipping', desc: '', price: '30,000₫' },
-// ];
-const addresses = ['duong Tran Van Giau', 'P.Tan Tao', 'Q.Binh Tan', 'Ho Chi Minh'];
-const payments = [
-  { name: 'Card type', detail: 'xxx' },
-  { name: 'Card holder', detail: 'xxx' },
-  { name: 'Card number', detail: 'xxxx-xxxx-xxxx-xxxx' },
-  //{ name: 'Expiry date', detail: '04/2024' },
-];
 
 const useStyles = makeStyles((theme) => ({
   listItem: {
@@ -42,19 +27,8 @@ export default function Review() {
   const classes = useStyles();
 
   const cart = useSelector((state)=> state.cart);
-  const {cartItems} = cart;
-
-  const order = useSelector((state) => state.order);
-  //const {orderItems, loading, error} = order;
-
-  // const shipping = useSelector((state) => state.shipping);
-  // console.log("3", shipping);
-  // const {a} = shipping;
-  // console.log("4", a);
-
-  // const shipping = localStorage.getItem('shipping') || [];
-  // console.log(shipping);
-  useEffect(() => {},[]);
+  const {cartItems, shipping} = cart;
+  console.log(shipping);
 
   const getCartTotal = () => {
     return cartItems
@@ -67,7 +41,7 @@ export default function Review() {
 
   const handleClick = () => {
     dispatch(createOrder({
-      orderItems: cartItems, shippingPrice, totalPrice
+      orderItems: cartItems, shipping, shippingPrice, totalPrice
     }));
   }
 
@@ -95,13 +69,9 @@ export default function Review() {
           <Typography variant="h6" gutterBottom className={classes.title}>
             Shipping
           </Typography>
-          {/* {a && a.map((item) => (
-            <div key={item.firstName}> */}
-                <Typography gutterBottom></Typography>
-                <Typography gutterBottom>{addresses.join(', ')}</Typography>
-            {/* </div>
-          ))} */}
-            
+            <Typography gutterBottom>{cart.shipping.firstName} {cart.shipping.lastName}</Typography>
+            <Typography gutterBottom>{cart.shipping.address}, {cart.shipping.city}</Typography>
+            <Typography gutterBottom>{cart.shipping.phone}</Typography>
         </Grid>
       </Grid>
       <Button onClick={handleClick}>Place Order</Button>

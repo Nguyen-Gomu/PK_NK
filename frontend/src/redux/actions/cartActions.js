@@ -17,7 +17,7 @@ export const addToCart = (id, qty, sizes) => async (dispatch, getState) => {
       size: data.size,
       content: data.content,
       sizes,
-      qty,  
+      qty,
     },
   });
 
@@ -29,6 +29,10 @@ export const removeFromCart = (id) => (dispatch, getState) => {
     type: actionTypes.REMOVE_FROM_CART,
     payload: id,
   });
-  
+
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };
+
+export const saveShipping = (data) => (dispatch) => {
+  dispatch({ type: actionTypes.CART_SAVE_SHIPPING, payload: data });
+}

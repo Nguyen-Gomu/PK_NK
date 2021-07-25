@@ -1,7 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-//import { createLogger } from 'redux-logger';
 
 // Reducers
 import { cartReducer } from "./reducers/cartReducers";
@@ -9,7 +8,6 @@ import {
   getProductsReducer,
   getProductDetailsReducer,
 } from "./reducers/productReducers";
-
 import { orderCreateReducer } from './reducers/ordersReducer';
 
 
@@ -28,7 +26,7 @@ const cartItemsInLocalStorage = localStorage.getItem("cart")
 
 const INITIAL_STATE = {
   cart: {
-    cartItems: cartItemsInLocalStorage,
+    cartItems: cartItemsInLocalStorage, shipping: {},
   },
 };
 
