@@ -16,6 +16,7 @@ import Box from "@material-ui/core/Box";
 
 import BeatLoader from "react-spinners/BeatLoader";
 import { css } from "@emotion/react";
+import {useDispatch,useSelector} from "react-redux";
 
 const override = css`
   display: flex;
@@ -115,6 +116,9 @@ function Checkout() {
     },1000)
   },[])
 
+  const cart = useSelector((state)=> state.cart);
+  const {cartItems, shipping} = cart;
+
   return (
     <div>
           {loading 
@@ -167,6 +171,7 @@ function Checkout() {
                       color="primary"
                       className={classes.button}
                       onClick={handleNext}
+                      disabled={cart.shipping.firstName === undefined}
                   >
                     {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                   </Button>

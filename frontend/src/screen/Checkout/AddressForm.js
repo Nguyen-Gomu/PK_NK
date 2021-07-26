@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
   },
 }));
-export default function AddressForm({history}) {
+export default function AddressForm() {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [firstName, setFirstName] = useState('');
