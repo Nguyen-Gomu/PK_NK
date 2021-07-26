@@ -120,6 +120,10 @@
   font-weight: bold;
 }
 
+.disabled {
+  display: none;
+}
+
 @media (max-width: 1320px) {
   .cartscreen {
     margin-top: 80px;

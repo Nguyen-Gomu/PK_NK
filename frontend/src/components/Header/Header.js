@@ -80,7 +80,7 @@ import { useSelector } from "react-redux";
                                 </div> */}
                             </li>
                             <li>
-                                <Link to="/about">ABOUT US</Link>
+                                <Link to="/home/connect">CONNECT</Link>
                                 {/* <div className="menu__sub">
                                     <ul>
                                         <li><Link to="/">Watch</Link></li>

@@ -16,6 +16,8 @@ import Box from "@material-ui/core/Box";
 
 
 
+
+
 const useStyles = makeStyles((theme) => ({
   container:{
     zIndex: theme.spacing(14),
@@ -76,6 +78,9 @@ function getStepContent(step) {
   }
 }
 
+
+
+
 function Checkout() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -111,8 +116,8 @@ function Checkout() {
                   Thank you for your order.
                 </Typography>
                 <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order confirmation, and will
-                  send you an update when your order has shipped.
+                  We will deliver the package to you at the earliest date.<br/>
+                  Have a good day.
                 </Typography>
               </React.Fragment>
             ) : (
@@ -125,10 +130,10 @@ function Checkout() {
                     </Button>
                   )}
                   <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.button}
+                      variant="contained"
+                      color="primary"
+                      className={classes.button}
+                      onClick={handleNext}
                   >
                     {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
                   </Button>

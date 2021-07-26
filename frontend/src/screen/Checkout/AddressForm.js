@@ -4,14 +4,24 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
-
+import { makeStyles } from '@material-ui/core/styles';
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import {saveShipping} from '../../redux/actions/cartActions';
 
+const useStyles = makeStyles((theme) => ({
+  container:{
+    zIndex: theme.spacing(14),
+    position:'relative',
+  },
+  button: {
+    marginTop: theme.spacing(3),
+    marginLeft: theme.spacing(1),
+  },
+}));
 export default function AddressForm({history}) {
   const dispatch = useDispatch();
-
+  const classes = useStyles();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [address, setAddress] = useState('');
@@ -97,14 +107,21 @@ export default function AddressForm({history}) {
             onChange={(e) => setPhone(e.target.value)}
           />
         </Grid>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <FormControlLabel
             control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
             label="Use this address for payment details"
           />
-        </Grid>
+        </Grid> */}
       </Grid>
-      <Button onClick={handleClick} > NextNext </Button>
+      <Button 
+        variant="contained"
+        color="primary" 
+        onClick={handleClick}
+        className={classes.button} 
+        > 
+          Confirm 
+        </Button>
     </React.Fragment>
   );
 }

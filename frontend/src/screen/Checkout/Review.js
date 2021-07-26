@@ -52,7 +52,7 @@ export default function Review() {
       <List disablePadding>
         {cartItems.map((item) => (
           <ListItem className={classes.listItem} key={item.product} >
-            <ListItemText primary={item.product} secondary={item.content} />
+            <ListItemText primary={item.name} secondary={item.content} />
             <Typography variant="body2">{item.price}</Typography>
           </ListItem>
         ))}
@@ -64,16 +64,24 @@ export default function Review() {
         </ListItem>
       </List>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12}>
           <Typography variant="h6" gutterBottom className={classes.title}>
             Shipping
           </Typography>
-            <Typography gutterBottom>{cart.shipping.firstName} {cart.shipping.lastName}</Typography>
-            <Typography gutterBottom>{cart.shipping.address}, {cart.shipping.city}</Typography>
-            <Typography gutterBottom>{cart.shipping.phone}</Typography>
+            <Typography gutterBottom>Name: {cart.shipping.firstName} {cart.shipping.lastName}</Typography>
+            <Typography gutterBottom>Address: {cart.shipping.address}</Typography>
+            <Typography gutterBottom>City: {cart.shipping.city}</Typography>
+            <Typography gutterBottom>Phone Number: {cart.shipping.phone}</Typography>
         </Grid>
       </Grid>
-      <Button onClick={handleClick}>Place Order</Button>
+      <Button 
+        onClick={handleClick}
+        variant="contained"
+        color="primary"
+        className={classes.button}
+      >
+          Confirm
+      </Button>
     </React.Fragment>
   );
 }
