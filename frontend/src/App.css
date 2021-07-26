@@ -5,3 +5,11 @@
   font-family: "Cabin", sans-serif;
   /* background-color: #f6f6f6; */
 }
+
+option {
+  background-color: #f6f6f6;
+}
+
+select {
+  background-color: #f6f6f6;
+}

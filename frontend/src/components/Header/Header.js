@@ -35,12 +35,12 @@ import { useSelector } from "react-redux";
                                     <i class="fas fa-shopping-cart"></i>
                                     <p className="qty__header">({getCartCount()})</p>
                                 </Link>
-                                <Link to="/signin">
+                                {/* <Link to="/signin">
                                     <i class="fas fa-user"></i>
-                                </Link>
-                                <Link to="/" onClick={click}>
+                                </Link> */}
+                                {/* <Link to="/" onClick={click}>
                                     <i class="fas fa-search"></i>
-                                </Link>
+                                </Link> */}
                             </div>
                         </nav>
                     </div>

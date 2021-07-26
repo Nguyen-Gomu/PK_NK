@@ -1,11 +1,45 @@
-import React from 'react'
-import './CartItem.css'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './CartItem.css';
+import BeatLoader from "react-spinners/BeatLoader";
+import { css } from "@emotion/react";
 
-import {Link} from 'react-router-dom'
+const override = css`
+  display: flex;
+  margin: 0 auto;
+  background-color:#f6f6f6;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+`;
+
+
 
 const CartItem = ({item,removeHandler,ChangeHandler}) => {
+
+  const [loading,setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    },1000)
+  },[])
+
     return (
-        <div className="cartitem">
+        <div>
+          {loading 
+            ? 
+          <BeatLoader
+            className="loading"
+            color={"#000"} 
+            loading={loading} 
+            css={override} 
+            size={15} 
+            margin={2}
+          /> :(<div className="cartitem">
             <div className="cartitem__image">
                 <img src={item.src} alt={item.name}></img>
             </div>
@@ -51,7 +85,8 @@ const CartItem = ({item,removeHandler,ChangeHandler}) => {
                   Remove
               </p>
             </div>
-            
+            </div>
+          )}
         </div>
     )
 }

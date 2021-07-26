@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 // import AppBar from '@material-ui/core/AppBar';
@@ -14,6 +14,19 @@ import AddressForm from './AddressForm';
 import Review from './Review';
 import Box from "@material-ui/core/Box";
 
+import BeatLoader from "react-spinners/BeatLoader";
+import { css } from "@emotion/react";
+
+const override = css`
+  display: flex;
+  margin: 0 auto;
+  background-color:#f6f6f6;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+`;
 
 
 
@@ -93,7 +106,27 @@ function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
+  const [loading,setLoading] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    },1000)
+  },[])
+
   return (
+    <div>
+          {loading 
+            ? 
+          <BeatLoader
+            className="loading"
+            color={"#000"} 
+            loading={loading} 
+            css={override} 
+            size={15} 
+            margin={2}
+          /> :(
       <Box className={classes.container} bgcolor="#fafafa">
         <React.Fragment>
       <CssBaseline />
@@ -144,7 +177,8 @@ function Checkout() {
         </Paper>
       </main>
     </React.Fragment>
-      </Box>
+      </Box>)}
+      </div>
   );
 }
 

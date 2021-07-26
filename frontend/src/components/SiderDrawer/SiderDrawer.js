@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-
+import RightImg from '../../assets/images/z2424960418725_6274f07fb01eeb92406b38d4e0e311e9-1_2048x2048.webp'
 // CSS
 import './SiderDrawer.css'
 
@@ -11,6 +11,7 @@ const SideDrawer = ({show,click}) => {
     if(show) {
         sidedrawerClass.push("show");
     }
+
 
     return (
         <div className={sidedrawerClass.join(" ")}>
@@ -72,11 +73,14 @@ const SideDrawer = ({show,click}) => {
                             </div>
                         </li> */}
                 </ul>
-                <div className="search">
+                {/* <div className="search">
                     <form className="form">
                         <input type="text" placeholder="Search"></input>
                         <button className="btn__arrow"><i class="fas fa-arrow-left"></i></button>
                     </form>
+                </div> */}
+                <div className="right-img">
+                    <img src={RightImg} alt="PK GOMU"></img>
                 </div>
             </nav>
         </div>

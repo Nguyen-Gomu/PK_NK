@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react'
+import React,{ useEffect ,useState} from 'react'
 
 import './CartScreen.css'
 import {Link} from 'react-router-dom'
@@ -10,7 +10,32 @@ import CartItem from '../../components/CartItem/CartItem'
 // Action
 import { addToCart, removeFromCart } from '../../redux/actions/cartActions'
 
+import BeatLoader from "react-spinners/BeatLoader";
+import { css } from "@emotion/react";
+
+const override = css`
+  display: flex;
+  margin: 0 auto;
+  background-color:#f6f6f6;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+`;
+
+
+
 const CartScreen = () => {
+    const [loading,setLoading] = useState(false)
+
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+        setLoading(false)
+        },3000)
+    },[])
+
     const dispatch = useDispatch();
 
     const cart = useSelector(state => state.cart);
@@ -46,6 +71,17 @@ const CartScreen = () => {
     }
 
     return (
+        <div>
+        {loading 
+            ? 
+          <BeatLoader
+            className="loading"
+            color={"#000"} 
+            loading={loading} 
+            css={override} 
+            size={15} 
+            margin={2}
+          /> :(
         <div className="cartscreen">
             <div className="cartscreen__left">
                 <h2>Shopping Cart</h2>
@@ -93,6 +129,8 @@ const CartScreen = () => {
             </div>
         </div>
         </div>
+          )}
+          </div>
     )
 }
 

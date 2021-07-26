@@ -38,6 +38,8 @@ function Search(props) {
                 type="text"
                 value={SearchName}
                 onChange={handleSearchNameChange}
+                placeholder="Search product"
+                className="search-product"
             />
         </form>
     )
