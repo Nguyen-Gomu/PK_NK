@@ -3,9 +3,10 @@ import querystring from "query-string";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BeatLoader from "react-spinners/BeatLoader";
-import Pagination from "../../components/Pagination/pagination";
 // Components
 import Product from "../../components/Product/Product";
+import Pagination from "../../components/Pagination/pagination";
+import Search from "../../components/Search/Search";
 //Actions
 import { getProducts as listProducts } from "../../redux/actions/productActions";
 import "./homeScreen.css";
@@ -24,14 +25,6 @@ const override = css`
 
 const HomeScreen = () => {
   const dispatch = useDispatch([]);
-  // const [loadingpage,setLoadingpage] = useState(false);
-
-  // useEffect(() => {
-  //   setLoadingpage(true);
-  //   setTimeout(() => {
-  //     setLoadingpage(false);
-  //   },8000)
-  // },[])
 
   const [pagination, setPagination] = useState({
     page: 1,
@@ -62,9 +55,21 @@ const HomeScreen = () => {
     });
   }
 
+  function handleSearchNameChange(newFilter){
+    console.log("New filter", newFilter);
+    setFilter({
+      ...filter,
+      page: 1,
+      name: newFilter.q,
+    })
+  }
+
   return (
     <div className="homescreen">
       <div className="homescreen__products">
+        <Search
+          onSubmit={handleSearchNameChange}
+        />
       {loading ? 
           <BeatLoader
             className="loading"

@@ -1,6 +1,6 @@
 import * as actionTypes from "../constants/productConstants";
 
-export const getProductsReducer = (state = { products: [],pagination:{} }, action) => {
+export const getProductsReducer = (state = { products: [] }, action) => {
   switch (action.type) {
     case actionTypes.GET_PRODUCTS_REQUEST:
       return {
@@ -10,7 +10,6 @@ export const getProductsReducer = (state = { products: [],pagination:{} }, actio
     case actionTypes.GET_PRODUCTS_SUCCESS:
       return {
         products: action.payload,
-        pagination: action.pagination,
         loading: false,
       };
     case actionTypes.GET_PRODUCTS_FAIL:

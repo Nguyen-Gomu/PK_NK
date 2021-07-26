@@ -2,19 +2,20 @@ const Product = require("../models/Product");
 
 const getProducts = async (req, res) => {
   try {
+    const searchKeyword = req.query.name
+    ? {
+        name: {
+          $regex: req.query.name,
+          $options: 'i',
+        },
+      }
+    : {};
     const {page = 1, limit = 12, totalRows = 253 } = req.query;
-    const products = await Product.find({})
+    const products = await Product.find({...searchKeyword})
     .limit(limit * 1)
     .skip((page - 1) * limit);
 
-    res.json({
-      data: products,
-      pagination: {
-        page,
-        limit,
-        totalRows
-      }
-    });
+    res.json(products);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });
