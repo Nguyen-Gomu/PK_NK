@@ -17,12 +17,12 @@ const SideDrawer = ({show,click}) => {
         <div className={sidedrawerClass.join(" ")}>
             <div className="menu__logo">
                 <h1>
-                    <Link href="/">PK-K</Link>
+                    <Link href="/">PK GOMU</Link>
                 </h1>
             </div>
             <nav className="menu">
                 <ul  onClick={click}>
-                    <Link className="menu__contact" href="/home">
+                    <Link className="menu__contact" href="/">
                         <p>HOME</p>
                     </Link>
                     <li>

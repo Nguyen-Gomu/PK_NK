@@ -32,7 +32,7 @@ export class MainPage extends Component{
                             <div className="video__info-detail">
                                 <img className="home__logo" src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/00-fw21-ivy-park-tease-cp-d_tcm221-703945.png"></img>
                                 <h2 className="home__title">FLEX PARK</h2>
-                                <button className="home__btn"><a className="home__btn-link" href="http://localhost:3000">SHOP NOW</a></button>
+                                <button className="home__btn"><a className="home__btn-link" href="http://localhost:3000/product">SHOP NOW</a></button>
                             </div>
                         </div>
                     </div>
