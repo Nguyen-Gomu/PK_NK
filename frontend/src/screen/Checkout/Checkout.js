@@ -116,8 +116,48 @@ function Checkout() {
     },1000)
   },[])
 
+  
+
   const cart = useSelector((state)=> state.cart);
   const {cartItems, shipping} = cart;
+
+  const contentBtn = activeStep === steps.length - 1 ? 'Place order' : 'Next'
+
+  const checkStep = (n) => {
+    if(n === 'Next' && cart.shipping.firstName === undefined ){
+      return true;
+    }else{      
+      return false;
+    }
+  }
+
+  const checkStep2 = (n) => {
+    if(n ==='Place order' && cartItems.length > 0){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+
+  function setStepContent(n) {
+    switch (n) {
+      case 'Next':
+        if(cart.shipping.firstName === undefined)
+          return true;
+        return false;
+      case 'Place Order':
+        if(cartItems.length > 0){
+          return true;
+        }else{
+          return false;
+        }
+      default:
+        throw new Error('Unknown step');
+    }
+  }
+
+
 
   return (
     <div>
@@ -171,9 +211,12 @@ function Checkout() {
                       color="primary"
                       className={classes.button}
                       onClick={handleNext}
-                      disabled={cart.shipping.firstName === undefined}
+                      // disabled={contentBtn === 'Next' ? checkStep(contentBtn) : checkStep2(contentBtn)}
+                       disabled={cart.shipping.firstName === undefined}
+                      // disabled={setStepContent(contentBtn)}
                   >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                    {/* {activeStep === steps.length - 1 ? 'Place order' : 'Next'} */}
+                    {contentBtn}
                   </Button>
                 </div>
               </React.Fragment>

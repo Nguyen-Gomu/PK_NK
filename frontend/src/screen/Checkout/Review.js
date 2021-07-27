@@ -42,6 +42,7 @@ export default function Review() {
     dispatch(createOrder({
       orderItems: cartItems, shipping, shippingPrice, totalPrice
     }));
+    // cart.shipping.firstName === undefined;
   }
 
   return (

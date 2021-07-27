@@ -26,10 +26,10 @@ const SideDrawer = ({show,click}) => {
                         <p>HOME</p>
                     </Link>
                     <li>
-                        <Link to="/">PRODUCTS</Link>
+                        <Link to="/product">PRODUCTS</Link>
                     </li>
                         <li>
-                            <Link to="/product" id="footwear">cONSIGNMENT TERM</Link>
+                            <Link to="/home/consignmentterm" id="footwear">CONSIGNMENT TERM</Link>
                             {/* <div className="menu__right">
                                 <ul>
                                     <li><Link to="/">Newest Sneakers</Link></li>

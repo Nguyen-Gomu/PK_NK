@@ -2,8 +2,13 @@ import React from 'react';
 import boxImg from '../../assets/images/glab.jpg'
 import './Info.css'
 
+
+
 function Glab() {
+   
+  
     return (
+        
         <div className="glab__container">
             <div className="glab__img">
                 <img src={boxImg} alt="huhuh" ></img>
@@ -23,6 +28,7 @@ function Glab() {
                 </div>
             </div>
         </div>
+   
     );
 }
 

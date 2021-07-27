@@ -51,7 +51,7 @@ import { useSelector } from "react-redux";
                             </li>
                             <li><Link to="/home">HOME</Link></li>
                             <li>
-                                <Link to="/" id="footwear">PRODUCTS</Link>
+                                <Link to="/product" id="footwear">PRODUCTS</Link>
                                 {/* <div className="menu__sub">
                                     <ul>
                                         <li><Link to="/">Newest Sneakers</Link></li>

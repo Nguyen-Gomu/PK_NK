@@ -1,9 +1,43 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import Glab from './form';
 import './Info.css'
 
+import BeatLoader from "react-spinners/BeatLoader";
+import { css } from "@emotion/react";
+
+const override = css`
+  display: flex;
+  margin: 0 auto;
+  background-color:#f6f6f6;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+`;
+
 function ConsignmentTerm() {
+    const [loading,setLoading] = useState(false)
+
+    useEffect(() => {
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      },1000)
+    },[])
+
     return (
+        <div>
+          {loading 
+            ? 
+          <BeatLoader
+            className="loading"
+            color={"#000"} 
+            loading={loading} 
+            css={override} 
+            size={15} 
+            margin={2}
+          /> :(
         <div className="consignment__container">
             <div className="consignment__info">
                 <h3>CONSIGNMENT TERM</h3>
@@ -37,6 +71,8 @@ function ConsignmentTerm() {
             </div>
             <Glab/>
         </div>
+          )}
+          </div>
     );
 }
 

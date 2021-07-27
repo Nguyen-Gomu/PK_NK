@@ -24,7 +24,7 @@ export class Sections extends Component {
                 <Route path="/signup" component={SingUp} />
                 <Route path="/checkout" component={Checkout}/>
 
-                <Route exact path="/" component={HomeScreen}/>
+                <Route exact path="/product" component={HomeScreen}/>
                 <Route exact path="/product/:id" component={ProductScreen}/>
                 <Route exact path="/cart" component={CartScreen}/>
                 <Route path="/home" component={MainPage} exact/>
