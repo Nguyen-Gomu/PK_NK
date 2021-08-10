@@ -20,7 +20,7 @@ export class Sections extends Component {
     render() {
         return (
             <section>
-                <Route path="/user/signin" component={SignIn}/>
+                <Route path="/signin" component={SignIn}/>
                 <Route path="/signup" component={SingUp} />
                 <Route path="/checkout" component={Checkout}/>
 

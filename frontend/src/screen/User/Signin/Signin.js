@@ -1,4 +1,3 @@
-import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +11,11 @@ import LockOpenIcon from '@material-ui/icons/LockOpen';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import {login} from '../../../redux/actions/userActions'
+import { loginRedecer } from '../../../redux/reducers/userReducers';
 
 
 
@@ -37,6 +41,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassWord] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login({email, password}));
+  }
 
   return (
     <Container component="main" maxWidth="xs" marginTop="">
@@ -49,7 +62,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -60,6 +73,8 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             variant="outlined"
@@ -71,6 +86,8 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassWord(e.target.value)}
           />
           <FormControlLabel
             // control={<Checkbox value="remember" color="primary" />}

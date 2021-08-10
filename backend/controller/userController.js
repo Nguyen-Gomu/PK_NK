@@ -16,12 +16,15 @@ const user_signup = (req, res, next) => {
         } else {
             bcrypt.hash(req.body.password, 10, (err, hash) => {
                 if (err) {
+                    console.log(err);
                     return res.status(500).json({
                         error: err
                     });
                 } else {
                     const user = new User({
                         _id: new mongoose.Types.ObjectId(),
+                        firstName: req.body.firstName,
+                        lastName: req.body.lastName,
                         email: req.body.email,
                         password: hash
                     });
